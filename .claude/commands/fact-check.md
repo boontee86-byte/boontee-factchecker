@@ -54,12 +54,51 @@ After verification, create the result JSON. Use these verdict values:
 | MOSTLY FALSE | Contains significant inaccuracies |
 | FALSE | Directly contradicted by credible sources |
 
+## Step 4: Transform Transcript into Polished Article
+
+Before saving, editorially transform the raw transcript into a polished, publication-quality article. This is critical — the transcript section on the site should read as a standalone article, not a raw transcript dump.
+
+### Editorial Rules
+
+1. **Capture ALL detail** — Every substantive point, argument, example, analogy, data point, quote, and reference must appear. A 60-minute video should produce 3,000–5,000+ words. Do not summarize or compress.
+
+2. **Restructure into logical sections** — Group points into coherent thematic sections with clear headings. Do NOT follow chronological order if the speaker jumped between topics. Reorganise for readability.
+
+3. **Write in polished prose** — Convert spoken language into written language. Eliminate filler words ("um", "uh", "you know", "so basically", "as I said"), false starts, repetition, and verbal tics. Remove transcript artifacts ("next slide", "can you hear me", audience laughter markers). Complete half-finished thoughts. Turn bullet-point-style speech into flowing paragraphs.
+
+4. **Preserve the speaker's voice** — Maintain the speaker's analytical framework, conclusions, and distinctive phrasings. Keep memorable metaphors or striking phrases.
+
+5. **Add structural scaffolding** — Include:
+   - An introduction that frames the content and its significance
+   - Section headings (use `## Heading` for major sections, `### Heading` for subsections)
+   - Smooth transitions between sections
+   - A conclusion that synthesises key arguments
+
+6. **Contextualise where needed** — If the speaker references events, people, or concepts a general reader might not know, add brief contextual notes. Do NOT inject opinions the speaker did not provide.
+
+7. **Handle Q&A sections** — Integrate substantive answers into the relevant sections rather than appending as a separate Q&A block.
+
+### Quality Checklist
+
+Before proceeding, verify:
+- Every substantive point from the transcript is represented
+- The article reads as a standalone piece (someone who never saw the video understands it fully)
+- No transcript artifacts remain
+- Headings create a clear, scannable structure
+- Prose is polished — no run-on sentences, no bullet points in the body
+- Introduction and conclusion are present and substantive
+
+Write the polished article to `data/transcript_article_temp.txt`. Use `## Heading` for major sections and `### Heading` for subsections within the text file.
+
+## Step 5: Save Results
+
 Now save the result. The best approach for long transcripts is to write temporary files and use a save script:
 
 1. Write the result JSON to `data/result_temp.json`
 2. Write the plain transcript to `data/transcript_temp.txt`
 3. Write the readable transcript (with timestamps) to `data/transcript_readable_temp.txt`
-4. Write a save script to `data/save_temp.js`:
+4. Write the polished article transcript to `data/transcript_article_temp.txt` (from Step 4)
+5. Write a save script to `data/save_temp.js`:
 
 ```javascript
 const fs = require('fs');
@@ -71,13 +110,14 @@ async function run() {
   const result = JSON.parse(fs.readFileSync(path.join(__dirname, 'result_temp.json'), 'utf-8'));
   const transcript = fs.readFileSync(path.join(__dirname, 'transcript_temp.txt'), 'utf-8');
   const transcriptReadable = fs.readFileSync(path.join(__dirname, 'transcript_readable_temp.txt'), 'utf-8');
-  await saveResult('<VIDEO_URL>', '<VIDEO_ID>', metadata, transcript, result, transcriptReadable);
+  const transcriptArticle = fs.readFileSync(path.join(__dirname, 'transcript_article_temp.txt'), 'utf-8');
+  await saveResult('<VIDEO_URL>', '<VIDEO_ID>', metadata, transcript, result, transcriptReadable, transcriptArticle);
 }
 run().then(() => console.log('Done')).catch(e => { console.error(e); process.exit(1); });
 ```
 
-5. Run: `cd "/c/Users/User/Build YouTube-FactChecker" && node data/save_temp.js`
-6. Clean up: `rm -f data/result_temp.json data/transcript_temp.txt data/transcript_readable_temp.txt data/save_temp.js`
+6. Run: `cd "/c/Users/User/Build YouTube-FactChecker" && node data/save_temp.js`
+7. Clean up: `rm -f data/result_temp.json data/transcript_temp.txt data/transcript_readable_temp.txt data/transcript_article_temp.txt data/save_temp.js`
 
 For the result JSON, use the following structure:
 
@@ -101,14 +141,14 @@ For the result JSON, use the following structure:
 
 IMPORTANT: Order claims chronologically by their timestamp_in_video (earliest first). The site will also sort them, but providing them in order makes the JSON easier to review.
 
-## Step 5: Download Thumbnail and Build Site
+## Step 6: Download Thumbnail and Build Site
 
 ```bash
 cd "/c/Users/User/Build YouTube-FactChecker" && node src/thumbnail.js "$ARGUMENTS"
 cd "/c/Users/User/Build YouTube-FactChecker" && node src/generate-site.js
 ```
 
-## Step 6: Report Summary
+## Step 7: Report Summary
 
 Display to the user:
 - Video title and channel

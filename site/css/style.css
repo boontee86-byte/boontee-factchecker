@@ -333,6 +333,69 @@ a:hover {
   margin-right: 4px;
 }
 
+/* Article Transcript */
+.transcript-article {
+  margin-bottom: 24px;
+}
+
+.transcript-article p {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+
+.transcript-article .article-h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.transcript-article .article-h2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.transcript-article .article-h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* Raw transcript toggle */
+.raw-transcript-toggle {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+}
+
+.raw-transcript-toggle summary {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 12px 16px;
+  user-select: none;
+}
+
+.raw-transcript-toggle summary:hover {
+  color: var(--accent);
+}
+
+.raw-transcript-toggle .raw-transcript {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+
 /* Source Quality */
 .source-quality {
   margin-bottom: 48px;

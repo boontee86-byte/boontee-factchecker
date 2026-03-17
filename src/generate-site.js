@@ -134,6 +134,30 @@ function formatTranscript(rawTranscript) {
   }).join('\n      ');
 }
 
+function formatArticle(articleText) {
+  if (!articleText) return '';
+  const lines = articleText.split('\n');
+  const html = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+
+    // Heading patterns: lines starting with ## or ### or # become headings
+    if (trimmed.startsWith('### ')) {
+      html.push(`<h4 class="article-h3">${escapeHtml(trimmed.slice(4))}</h4>`);
+    } else if (trimmed.startsWith('## ')) {
+      html.push(`<h3 class="article-h2">${escapeHtml(trimmed.slice(3))}</h3>`);
+    } else if (trimmed.startsWith('# ')) {
+      html.push(`<h3 class="article-h1">${escapeHtml(trimmed.slice(2))}</h3>`);
+    } else {
+      html.push(`<p>${escapeHtml(trimmed)}</p>`);
+    }
+  }
+
+  return html.join('\n      ');
+}
+
 function generateVideoPage(video) {
   // Sort claims by timestamp
   const sortedClaims = (video.claims || []).slice().sort((a, b) => {
@@ -198,7 +222,17 @@ function generateVideoPage(video) {
 
     <div class="transcript-section">
       <h2>Transcript</h2>
-      ${formatTranscript(video.transcript_readable || video.transcript_text)}
+      ${video.transcript_article ? `
+      <div class="transcript-article">
+        ${formatArticle(video.transcript_article)}
+      </div>
+      <details class="raw-transcript-toggle">
+        <summary>Show raw transcript with timestamps</summary>
+        <div class="raw-transcript">
+          ${formatTranscript(video.transcript_readable || video.transcript_text)}
+        </div>
+      </details>
+      ` : formatTranscript(video.transcript_readable || video.transcript_text)}
     </div>
 
     <div class="fact-check-timestamp">

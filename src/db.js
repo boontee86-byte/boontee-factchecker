@@ -36,7 +36,8 @@ async function initDb() {
       source_quality_note TEXT,
       fact_checked_at TEXT NOT NULL,
       video_duration_seconds INTEGER,
-      language TEXT DEFAULT 'en'
+      language TEXT DEFAULT 'en',
+      transcript_article TEXT
     )
   `);
   db.run(`
@@ -58,17 +59,20 @@ async function initDb() {
   console.log('Database initialized at', DB_PATH);
 }
 
-async function saveResult(videoUrl, videoId, metadata, transcriptText, result, transcriptReadable) {
+async function saveResult(videoUrl, videoId, metadata, transcriptText, result, transcriptReadable, transcriptArticle) {
   const db = await getDb();
 
   // Delete existing data for this video (allow re-checking)
   db.run('DELETE FROM claims WHERE video_id = ?', [videoId]);
   db.run('DELETE FROM videos WHERE id = ?', [videoId]);
 
+  // Ensure transcript_article column exists (migration for older databases)
+  try { db.run('ALTER TABLE videos ADD COLUMN transcript_article TEXT'); } catch (e) { /* column already exists */ }
+
   db.run(`
     INSERT INTO videos (id, url, title, channel_name, thumbnail_path, transcript_text,
-      transcript_readable, overall_verdict, overall_summary, source_quality_note, fact_checked_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      transcript_readable, overall_verdict, overall_summary, source_quality_note, fact_checked_at, transcript_article)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `, [
     videoId,
     videoUrl,
@@ -80,7 +84,8 @@ async function saveResult(videoUrl, videoId, metadata, transcriptText, result, t
     result.overall_verdict,
     result.overall_summary,
     result.source_quality_note || '',
-    new Date().toISOString()
+    new Date().toISOString(),
+    transcriptArticle || ''
   ]);
 
   const claims = result.claims || [];
