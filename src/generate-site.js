@@ -134,27 +134,51 @@ function formatTranscript(rawTranscript) {
   }).join('\n      ');
 }
 
+function formatInlineMarkdown(text) {
+  let s = escapeHtml(text);
+  // Bold: **text** or __text__
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/__(.+?)__/g, '<strong>$1</strong>');
+  // Italic: *text* or _text_ (but not inside words for underscores)
+  s = s.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  return s;
+}
+
 function formatArticle(articleText) {
   if (!articleText) return '';
   const lines = articleText.split('\n');
   const html = [];
+  let inList = false;
 
   for (const line of lines) {
     const trimmed = line.trim();
-    if (!trimmed) continue;
+    if (!trimmed) {
+      if (inList) { html.push('</ul>'); inList = false; }
+      continue;
+    }
+
+    // List items: lines starting with - or *
+    if (/^[-*]\s+/.test(trimmed)) {
+      if (!inList) { html.push('<ul class="article-list">'); inList = true; }
+      html.push(`<li>${formatInlineMarkdown(trimmed.replace(/^[-*]\s+/, ''))}</li>`);
+      continue;
+    }
+
+    if (inList) { html.push('</ul>'); inList = false; }
 
     // Heading patterns: lines starting with ## or ### or # become headings
     if (trimmed.startsWith('### ')) {
-      html.push(`<h4 class="article-h3">${escapeHtml(trimmed.slice(4))}</h4>`);
+      html.push(`<h4 class="article-h3">${formatInlineMarkdown(trimmed.slice(4))}</h4>`);
     } else if (trimmed.startsWith('## ')) {
-      html.push(`<h3 class="article-h2">${escapeHtml(trimmed.slice(3))}</h3>`);
+      html.push(`<h3 class="article-h2">${formatInlineMarkdown(trimmed.slice(3))}</h3>`);
     } else if (trimmed.startsWith('# ')) {
-      html.push(`<h3 class="article-h1">${escapeHtml(trimmed.slice(2))}</h3>`);
+      html.push(`<h3 class="article-h1">${formatInlineMarkdown(trimmed.slice(2))}</h3>`);
     } else {
-      html.push(`<p>${escapeHtml(trimmed)}</p>`);
+      html.push(`<p>${formatInlineMarkdown(trimmed)}</p>`);
     }
   }
 
+  if (inList) html.push('</ul>');
   return html.join('\n      ');
 }
 

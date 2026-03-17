@@ -371,6 +371,29 @@ a:hover {
   margin-bottom: 8px;
 }
 
+.transcript-article .article-list {
+  margin: 0 0 14px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.transcript-article .article-list li {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+
+.transcript-article strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.transcript-article em {
+  font-style: italic;
+  color: var(--text);
+}
+
 /* Raw transcript toggle */
 .raw-transcript-toggle {
   margin-top: 24px;
