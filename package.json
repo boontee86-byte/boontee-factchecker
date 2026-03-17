@@ -1,0 +1,14 @@
+{
+  "name": "youtube-factchecker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fact-check YouTube finance/investing videos using Claude",
+  "scripts": {
+    "init-db": "node src/db.js init",
+    "dev": "node scripts/dev-server.js",
+    "build": "node src/generate-site.js"
+  },
+  "dependencies": {
+    "sql.js": "^1.11.0"
+  }
+}
