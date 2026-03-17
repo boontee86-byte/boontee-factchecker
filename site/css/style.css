@@ -145,7 +145,7 @@ a:hover {
 .video-card .card-meta {
   font-size: 0.7rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 /* Verdict Badge */

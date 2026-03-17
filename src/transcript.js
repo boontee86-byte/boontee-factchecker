@@ -24,6 +24,20 @@ async function fetchMetadata(videoId) {
   };
 }
 
+async function fetchPublishedDate(videoId) {
+  const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
+    headers: { 'User-Agent': USER_AGENT }
+  });
+  const html = await watchRes.text();
+  // Try publishDate (YouTube's JSON format includes full ISO timestamp)
+  const pubMatch = html.match(/"publishDate"\s*:\s*"(\d{4}-\d{2}-\d{2})/);
+  if (pubMatch) return pubMatch[1];
+  // Fallback: uploadDate
+  const uploadMatch = html.match(/"uploadDate"\s*:\s*"(\d{4}-\d{2}-\d{2})/);
+  if (uploadMatch) return uploadMatch[1];
+  return null;
+}
+
 async function fetchTranscript(videoId) {
   // Method 1: Use YouTube's innertube API to get caption tracks
   const playerUrl = 'https://www.youtube.com/youtubei/v1/player?prettyPrint=false';
@@ -177,15 +191,17 @@ async function main() {
   }
 
   const videoId = extractVideoId(url);
-  const [metadata, transcript] = await Promise.all([
+  const [metadata, transcript, publishedDate] = await Promise.all([
     fetchMetadata(videoId),
-    fetchTranscript(videoId)
+    fetchTranscript(videoId),
+    fetchPublishedDate(videoId)
   ]);
 
   const result = {
     videoId,
     url: `https://www.youtube.com/watch?v=${videoId}`,
     ...metadata,
+    published_date: publishedDate,
     transcript: transcript.readable,
     transcript_plain: transcript.plain
   };

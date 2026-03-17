@@ -50,7 +50,8 @@ function generateIndex(videos) {
           <img class="thumbnail" src="/thumbnails/${v.id}.jpg" alt="${escapeHtml(v.title)}" loading="lazy">
           <div class="card-body">
             <div class="card-title">${escapeHtml(v.title)}</div>
-            <div class="card-meta">${escapeHtml(v.channel_name)} &middot; ${formatDate(v.fact_checked_at)}</div>
+            <div class="card-meta">${escapeHtml(v.channel_name)} &middot; ${v.published_date ? formatDate(v.published_date) : formatDate(v.fact_checked_at)}</div>
+            <span class="verdict-badge ${verdictClass(v.overall_verdict)}">${escapeHtml(v.overall_verdict)}</span>
           </div>
         </a>
       </div>`).join('\n');

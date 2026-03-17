@@ -15,7 +15,7 @@ Run this command to get the video transcript and metadata:
 cd "/c/Users/User/Build YouTube-FactChecker" && node src/transcript.js "$ARGUMENTS"
 ```
 
-Read the output carefully. It contains the video title, channel name, and full transcript.
+Read the output carefully. It contains the video title, channel name, published date, and full transcript.
 
 ## Step 2: Analyze the Transcript
 
@@ -106,7 +106,7 @@ const path = require('path');
 const { initDb, saveResult } = require('../src/db');
 async function run() {
   await initDb();
-  const metadata = { title: '<VIDEO TITLE>', channel_name: '<CHANNEL NAME>' };
+  const metadata = { title: '<VIDEO TITLE>', channel_name: '<CHANNEL NAME>', published_date: '<YYYY-MM-DD or empty>' };
   const result = JSON.parse(fs.readFileSync(path.join(__dirname, 'result_temp.json'), 'utf-8'));
   const transcript = fs.readFileSync(path.join(__dirname, 'transcript_temp.txt'), 'utf-8');
   const transcriptReadable = fs.readFileSync(path.join(__dirname, 'transcript_readable_temp.txt'), 'utf-8');

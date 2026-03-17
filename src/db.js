@@ -66,13 +66,14 @@ async function saveResult(videoUrl, videoId, metadata, transcriptText, result, t
   db.run('DELETE FROM claims WHERE video_id = ?', [videoId]);
   db.run('DELETE FROM videos WHERE id = ?', [videoId]);
 
-  // Ensure transcript_article column exists (migration for older databases)
+  // Ensure columns exist (migration for older databases)
   try { db.run('ALTER TABLE videos ADD COLUMN transcript_article TEXT'); } catch (e) { /* column already exists */ }
+  try { db.run('ALTER TABLE videos ADD COLUMN published_date TEXT'); } catch (e) { /* column already exists */ }
 
   db.run(`
     INSERT INTO videos (id, url, title, channel_name, thumbnail_path, transcript_text,
-      transcript_readable, overall_verdict, overall_summary, source_quality_note, fact_checked_at, transcript_article)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      transcript_readable, overall_verdict, overall_summary, source_quality_note, fact_checked_at, transcript_article, published_date)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `, [
     videoId,
     videoUrl,
@@ -85,7 +86,8 @@ async function saveResult(videoUrl, videoId, metadata, transcriptText, result, t
     result.overall_summary,
     result.source_quality_note || '',
     new Date().toISOString(),
-    transcriptArticle || ''
+    transcriptArticle || '',
+    metadata.published_date || ''
   ]);
 
   const claims = result.claims || [];
@@ -112,13 +114,13 @@ async function saveResult(videoUrl, videoId, metadata, transcriptText, result, t
 
 async function listVideos() {
   const db = await getDb();
-  const rows = db.exec('SELECT id, url, title, channel_name, thumbnail_path, overall_verdict, overall_summary, fact_checked_at FROM videos ORDER BY fact_checked_at DESC');
+  const rows = db.exec('SELECT id, url, title, channel_name, thumbnail_path, overall_verdict, overall_summary, fact_checked_at, published_date FROM videos ORDER BY fact_checked_at DESC');
   db.close();
   if (!rows.length || !rows[0].values.length) return [];
   return rows[0].values.map(row => ({
     id: row[0], url: row[1], title: row[2], channel_name: row[3],
     thumbnail_path: row[4], overall_verdict: row[5], overall_summary: row[6],
-    fact_checked_at: row[7]
+    fact_checked_at: row[7], published_date: row[8]
   }));
 }
 
