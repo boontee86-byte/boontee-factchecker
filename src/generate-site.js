@@ -51,7 +51,6 @@ function generateIndex(videos) {
           <div class="card-body">
             <div class="card-title">${escapeHtml(v.title)}</div>
             <div class="card-meta">${escapeHtml(v.channel_name)} &middot; ${formatDate(v.fact_checked_at)}</div>
-            <span class="verdict-badge ${verdictClass(v.overall_verdict)}">${escapeHtml(v.overall_verdict)}</span>
           </div>
         </a>
       </div>`).join('\n');
@@ -200,6 +199,10 @@ function generateVideoPage(video) {
     <div class="transcript-section">
       <h2>Transcript</h2>
       ${formatTranscript(video.transcript_readable || video.transcript_text)}
+    </div>
+
+    <div class="fact-check-timestamp">
+      Fact-checked on ${formatDate(video.fact_checked_at)}
     </div>
   </main>
 

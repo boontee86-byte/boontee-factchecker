@@ -24,6 +24,7 @@
   --verdict-unverifiable: #95a5a6;
   --verdict-mostly-false: #e74c3c;
   --verdict-false: #c0392b;
+  --verdict-fearmongering: #9b59b6;
 }
 
 html {
@@ -165,6 +166,7 @@ a:hover {
 .verdict-badge.unverifiable { background: var(--verdict-unverifiable); color: #000; }
 .verdict-badge.mostly-false { background: var(--verdict-mostly-false); color: #fff; }
 .verdict-badge.false { background: var(--verdict-false); color: #fff; }
+.verdict-badge.fearmongering { background: var(--verdict-fearmongering); color: #000; }
 
 /* Detail Page */
 .back-link {
@@ -339,6 +341,16 @@ a:hover {
 .source-quality p {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+/* Fact-check timestamp */
+.fact-check-timestamp {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: right;
+  margin-bottom: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
 
 /* Footer */
