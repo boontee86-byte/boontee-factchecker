@@ -63,6 +63,25 @@ Write a comprehensive, publication-quality primer article (3,000-5,000+ words). 
 
 7. **Stay factual** — Present verified information. Where data conflicts or is uncertain, note it. Do not inject personal opinions or investment advice.
 
+8. **Use illustrations liberally** — Whenever you discuss breakdowns, distributions, market sizes, comparisons, or proportional data, include a visual chart illustration using the `:::chart` syntax. This produces a horizontal bar chart in the generated HTML. The syntax is:
+
+   ```
+   :::chart "Chart Title"
+   Label 1|60%|$1.5T
+   Label 2|15%|$375B
+   Label 3|10%|$250B
+   :::
+   ```
+
+   Each row is: `Label|Percentage|Optional detail text`. The percentage drives the bar width. Use these charts for:
+   - **Market size breakdowns** — e.g., sub-categories of a total market
+   - **Investor type distributions** — e.g., who holds what percentage
+   - **Return comparisons** — e.g., asset class returns side by side
+   - **Geographic distributions** — e.g., regional market shares
+   - **Any proportional data** that benefits from visual representation
+
+   Aim for at least 3-5 charts per article. Every major section with quantitative data should have at least one chart.
+
 ### Quality Checklist
 
 Before proceeding, verify:
@@ -73,6 +92,7 @@ Before proceeding, verify:
 - Headings create a clear, scannable structure
 - No filler or vague generalities remain
 - Introduction and conclusion are present and substantive
+- At least 3-5 `:::chart` illustrations are included for quantitative data
 
 ## Step 4: Write a Summary
 

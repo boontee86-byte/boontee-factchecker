@@ -176,14 +176,57 @@ function formatInlineMarkdown(text) {
   return s;
 }
 
-function formatArticle(articleText) {
-  if (!articleText) return '';
+function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function formatArticle(articleText, opts) {
+  if (!articleText) return opts && opts.extractHeadings ? { html: '', headings: [] } : '';
   const lines = articleText.split('\n');
   const html = [];
+  const headings = [];
   let inList = false;
+  let inChart = false;
+  let chartTitle = '';
+  let chartRows = [];
 
   for (const line of lines) {
     const trimmed = line.trim();
+
+    // Chart block: :::chart "Title"
+    if (trimmed.startsWith(':::chart')) {
+      if (!inChart) {
+        inChart = true;
+        chartTitle = (trimmed.match(/:::chart\s+"(.+?)"/) || [])[1] || '';
+        chartRows = [];
+        continue;
+      } else {
+        // Closing :::
+        if (inList) { html.push('</ul>'); inList = false; }
+        html.push(renderChart(chartTitle, chartRows));
+        inChart = false;
+        chartTitle = '';
+        chartRows = [];
+        continue;
+      }
+    }
+    if (trimmed === ':::' && inChart) {
+      if (inList) { html.push('</ul>'); inList = false; }
+      html.push(renderChart(chartTitle, chartRows));
+      inChart = false;
+      chartTitle = '';
+      chartRows = [];
+      continue;
+    }
+    if (inChart) {
+      // Parse chart row: Label|Percentage|Detail (detail is optional)
+      const parts = trimmed.split('|').map(s => s.trim());
+      if (parts.length >= 2) {
+        chartRows.push({ label: parts[0], pct: parts[1], detail: parts[2] || '' });
+      }
+      continue;
+    }
+
     if (!trimmed) {
       if (inList) { html.push('</ul>'); inList = false; }
       continue;
@@ -200,18 +243,53 @@ function formatArticle(articleText) {
 
     // Heading patterns: lines starting with ## or ### or # become headings
     if (trimmed.startsWith('### ')) {
-      html.push(`<h4 class="article-h3">${formatInlineMarkdown(trimmed.slice(4))}</h4>`);
+      const text = trimmed.slice(4);
+      const id = slugify(text);
+      headings.push({ level: 3, text, id });
+      html.push(`<h4 class="article-h3" id="${id}">${formatInlineMarkdown(text)}</h4>`);
     } else if (trimmed.startsWith('## ')) {
-      html.push(`<h3 class="article-h2">${formatInlineMarkdown(trimmed.slice(3))}</h3>`);
+      const text = trimmed.slice(3);
+      const id = slugify(text);
+      headings.push({ level: 2, text, id });
+      html.push(`<h3 class="article-h2" id="${id}">${formatInlineMarkdown(text)}</h3>`);
     } else if (trimmed.startsWith('# ')) {
-      html.push(`<h3 class="article-h1">${formatInlineMarkdown(trimmed.slice(2))}</h3>`);
+      const text = trimmed.slice(2);
+      const id = slugify(text);
+      headings.push({ level: 1, text, id });
+      html.push(`<h3 class="article-h1" id="${id}">${formatInlineMarkdown(text)}</h3>`);
     } else {
       html.push(`<p>${formatInlineMarkdown(trimmed)}</p>`);
     }
   }
 
   if (inList) html.push('</ul>');
-  return html.join('\n      ');
+  const result = html.join('\n      ');
+  if (opts && opts.extractHeadings) {
+    return { html: result, headings };
+  }
+  return result;
+}
+
+function renderChart(title, rows) {
+  if (!rows.length) return '';
+  // Parse percentages for bar widths
+  const maxPct = Math.max(...rows.map(r => parseFloat(r.pct) || 0), 1);
+  const barsHtml = rows.map(r => {
+    const pctNum = parseFloat(r.pct) || 0;
+    const widthPct = Math.max((pctNum / maxPct) * 100, 2);
+    return `<div class="chart-row">
+        <div class="chart-label">${escapeHtml(r.label)}</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: ${widthPct}%">
+            <span class="chart-bar-text">${escapeHtml(r.pct)}${r.detail ? ' — ' + escapeHtml(r.detail) : ''}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('\n');
+  return `<div class="article-chart">
+      ${title ? `<div class="chart-title">${escapeHtml(title)}</div>` : ''}
+      ${barsHtml}
+    </div>`;
 }
 
 function generateVideoPage(video) {
@@ -299,9 +377,26 @@ function generateVideoPage(video) {
 ${htmlFooter()}`;
 }
 
+function buildToc(headings) {
+  if (!headings || headings.length === 0) return '';
+  const items = headings
+    .filter(h => h.level <= 2) // Only ## headings in the TOC (major sections)
+    .map(h => `<li class="toc-item"><a href="#${h.id}" class="toc-link">${escapeHtml(h.text)}</a></li>`)
+    .join('\n          ');
+  return `<nav class="research-toc" aria-label="Table of contents">
+        <div class="toc-title">Contents</div>
+        <ol class="toc-list">
+          ${items}
+        </ol>
+      </nav>`;
+}
+
 function generateResearchPage(research) {
+  const { html: articleHtml, headings } = formatArticle(research.content, { extractHeadings: true });
+  const toc = buildToc(headings);
+
   return `${htmlHead(`${research.title} — Research Primer`)}
-  <main class="container">
+  <main class="container research-container">
     <a href="/" class="back-link">&larr; Back to home</a>
 
     <div class="research-detail-header">
@@ -309,14 +404,40 @@ function generateResearchPage(research) {
       <div class="meta">Research Primer &middot; ${formatDate(research.created_at)}</div>
     </div>
 
-    <div class="research-article transcript-article">
-      ${formatArticle(research.content)}
+    <div class="research-layout">
+      ${toc}
+      <div class="research-article transcript-article">
+        ${articleHtml}
+      </div>
     </div>
 
     <div class="fact-check-timestamp">
       Published ${formatDate(research.created_at)}
     </div>
   </main>
+
+  <script>
+    // Highlight active TOC item on scroll
+    (function() {
+      var toc = document.querySelector('.research-toc');
+      if (!toc) return;
+      var links = toc.querySelectorAll('.toc-link');
+      var ids = Array.prototype.map.call(links, function(a) { return a.getAttribute('href').slice(1); });
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var active = '';
+        for (var i = 0; i < ids.length; i++) {
+          var el = document.getElementById(ids[i]);
+          if (el && el.offsetTop <= scrollY + 120) active = ids[i];
+        }
+        links.forEach(function(a) {
+          a.classList.toggle('toc-active', a.getAttribute('href') === '#' + active);
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 
 ${htmlFooter()}`;
 }
