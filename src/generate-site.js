@@ -98,16 +98,21 @@ ${videoCards}
     <div class="section-divider"></div>
     <h2 class="section-header">Research</h2>
     <div class="research-grid">
-      ${researchItems.map(r => `
+      ${researchItems.map(r => {
+        const thumbExt = ['png', 'jpg', 'webp'].find(ext => fs.existsSync(path.join(SITE_DIR, 'thumbnails', `${r.id}.${ext}`)));
+        const thumbHtml = thumbExt ? `<img class="research-card-thumbnail" src="/thumbnails/${r.id}.${thumbExt}" alt="${escapeHtml(r.title)}" loading="lazy">` : '';
+        return `
       <div class="research-card">
         <a href="/research/${r.id}.html">
+          ${thumbHtml}
           <div class="research-card-body">
             <div class="research-card-title">${escapeHtml(r.title)}</div>
             <div class="research-card-summary">${escapeHtml(r.summary)}</div>
             <div class="research-card-date">${formatDate(r.created_at)}</div>
           </div>
         </a>
-      </div>`).join('\n')}
+      </div>`;
+      }).join('\n')}
     </div>` : ''}
   </main>
 
@@ -394,11 +399,13 @@ function buildToc(headings) {
 function generateResearchPage(research) {
   const { html: articleHtml, headings } = formatArticle(research.content, { extractHeadings: true });
   const toc = buildToc(headings);
+  const thumbExt = ['png', 'jpg', 'webp'].find(ext => fs.existsSync(path.join(SITE_DIR, 'thumbnails', `${research.id}.${ext}`)));
+  const heroHtml = thumbExt ? `\n    <img class="research-hero" src="/thumbnails/${research.id}.${thumbExt}" alt="${escapeHtml(research.title)}">` : '';
 
   return `${htmlHead(`${research.title} — Research Primer`)}
   <main class="container research-container">
     <a href="/" class="back-link">&larr; Back to home</a>
-
+    ${heroHtml}
     <div class="research-detail-header">
       <h1>${escapeHtml(research.title)}</h1>
       <div class="meta">Research Primer &middot; ${formatDate(research.created_at)}</div>

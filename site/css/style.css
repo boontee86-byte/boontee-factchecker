@@ -508,6 +508,13 @@ a:hover {
   transition: background 0.2s;
 }
 
+.research-card-thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
 .research-card:hover {
   background: var(--bg-card-hover);
 }
@@ -546,6 +553,12 @@ a:hover {
 }
 
 /* Research Detail Page */
+.research-hero {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
 .research-detail-header {
   margin-bottom: 32px;
 }
