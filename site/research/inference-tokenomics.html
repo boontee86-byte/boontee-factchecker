@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inference Tokenomics — Research Primer</title>
+  <link rel="stylesheet" href="/css/style.css?v=1773822044454">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container research-container">
+    <a href="/" class="back-link">&larr; Back to home</a>
+    
+    <div class="research-detail-header">
+      <h1>Inference Tokenomics</h1>
+      <div class="meta">Research Primer &middot; Mar 18, 2026</div>
+    </div>
+
+    <div class="research-layout">
+      <nav class="research-toc" aria-label="Table of contents">
+        <div class="toc-title">Contents</div>
+        <ol class="toc-list">
+          <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+          <li class="toc-item"><a href="#what-are-tokens" class="toc-link">What Are Tokens?</a></li>
+          <li class="toc-item"><a href="#the-ai-factory-paradigm" class="toc-link">The AI Factory Paradigm</a></li>
+          <li class="toc-item"><a href="#the-throughput-latency-pareto-frontier" class="toc-link">The Throughput-Latency Pareto Frontier</a></li>
+          <li class="toc-item"><a href="#token-pricing-tiers-the-segmentation-of-intelligence" class="toc-link">Token Pricing Tiers: The Segmentation of Intelligence</a></li>
+          <li class="toc-item"><a href="#the-economics-of-ai-factory-revenue" class="toc-link">The Economics of AI Factory Revenue</a></li>
+          <li class="toc-item"><a href="#hardware-architectures-for-token-production" class="toc-link">Hardware Architectures for Token Production</a></li>
+          <li class="toc-item"><a href="#the-agentic-consumption-explosion" class="toc-link">The Agentic Consumption Explosion</a></li>
+          <li class="toc-item"><a href="#the-hyperscaler-investment-cycle" class="toc-link">The Hyperscaler Investment Cycle</a></li>
+          <li class="toc-item"><a href="#market-structure-who-produces-and-consumes-tokens" class="toc-link">Market Structure: Who Produces and Consumes Tokens</a></li>
+          <li class="toc-item"><a href="#the-unit-economics-of-token-production" class="toc-link">The Unit Economics of Token Production</a></li>
+          <li class="toc-item"><a href="#the-future-of-tokenomics" class="toc-link">The Future of Tokenomics</a></li>
+          <li class="toc-item"><a href="#conclusion" class="toc-link">Conclusion</a></li>
+        </ol>
+      </nav>
+      <div class="research-article transcript-article">
+        <h3 class="article-h2" id="introduction">Introduction</h3>
+      <p>In March 2026, NVIDIA CEO Jensen Huang stood on the stage at GTC and declared a new economic paradigm: <strong>tokenomics</strong> — the economics of producing, pricing, and consuming AI inference tokens at industrial scale. Data centres, he argued, are no longer storage facilities for files. They are <strong>AI factories</strong> whose primary output is tokens — the fundamental unit of AI computation — and whose revenues are directly determined by how efficiently those tokens are manufactured.</p>
+      <p>This is not a metaphor. The world's largest technology companies are collectively spending over $600 billion in 2026 on AI infrastructure. OpenAI alone is projected to spend $14.1 billion on inference costs this year. Anthropic is on track for $9–20 billion in annualised revenue. The global AI inference market, valued at $103.7 billion in 2025, is projected to reach $312.6 billion by 2034. Tokens — sequences of text fragments, image patches, or code units that AI models process and generate — have become the commodity at the centre of this economic transformation.</p>
+      <p>Understanding inference tokenomics is now essential for anyone evaluating the AI industry: investors sizing up hyperscaler capital expenditure, engineers budgeting their compute, enterprise leaders planning AI deployments, or policymakers assessing the infrastructure demands of the AI era. This primer covers the full landscape — from the physics of token production to the pricing tiers of token consumption, from the hardware architectures that determine cost-per-token to the business models being built atop this new commodity.</p>
+      <h3 class="article-h2" id="what-are-tokens">What Are Tokens?</h3>
+      <p>A <strong>token</strong> is the basic unit of data that a large language model (LLM) processes. When you type a question into ChatGPT or Claude, your text is broken into tokens — typically fragments of words, punctuation marks, or whitespace characters. A rough rule of thumb: one token equals approximately 0.75 English words, or conversely, 100 tokens cover roughly 75 words.</p>
+      <p>Tokens serve as both the input and the output of AI inference. <strong>Input tokens</strong> (also called <strong>prompt tokens</strong>) represent the data you send to the model — your question, the context, the system instructions. <strong>Output tokens</strong> (also called <strong>completion tokens</strong>) represent the model's response — the generated text, code, or reasoning. This distinction matters economically because output tokens are substantially more expensive to produce than input tokens, typically by a factor of 3–8x, reflecting the sequential, compute-intensive nature of token generation versus the parallelisable nature of prompt processing.</p>
+      <p>Beyond text, the token concept extends to images (processed as patches of pixels), audio (spectral frames), video (spatiotemporal patches), and even robotic control signals (continuous action tokens). As AI becomes multimodal, the token economy expands accordingly.</p>
+      <h4 class="article-h3" id="why-tokens-matter-economically">Why Tokens Matter Economically</h4>
+      <p>Tokens are to AI what kilowatt-hours are to electricity or barrel-equivalents are to energy — a standardised unit of output that can be metered, priced, and traded. Every API call from OpenAI, Anthropic, Google, or any inference provider is billed in tokens. Every enterprise AI deployment's cost is fundamentally denominated in tokens consumed. Every data centre's revenue potential is bounded by the tokens it can produce per unit of power.</p>
+      <p>This is the foundation of tokenomics: <strong>tokens are the new commodity, and compute is revenue</strong>.</p>
+      <h3 class="article-h2" id="the-ai-factory-paradigm">The AI Factory Paradigm</h3>
+      <p>Jensen Huang's central thesis at GTC 2026 was that data centres have undergone a fundamental transformation. A traditional data centre stored and served files — it was infrastructure. An AI factory <strong>produces</strong> something: tokens. The analogy to physical manufacturing is deliberate and precise.</p>
+      <h4 class="article-h3" id="from-data-centres-to-factories">From Data Centres to Factories</h4>
+      <p>A gigawatt AI factory — the scale at which the largest facilities now operate — costs approximately $35–60 billion to construct, depending on the configuration and cooling requirements. That capital is sunk regardless of what hardware you install. As Huang put it: &quot;Even when you put nothing on it, it's $40 billion in. You better make for darn sure you put the best computer system on that thing so that you could have the best token cost.&quot;</p>
+      <div class="article-chart">
+      <div class="chart-title">Estimated AI Data Centre Construction Costs (1 GW)</div>
+      <div class="chart-row">
+        <div class="chart-label">Land, Power &amp; Shell</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">$16–22B (40%)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">GPU/Accelerator Hardware</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 66.66666666666666%">
+            <span class="chart-bar-text">$10–18B (30%)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Networking &amp; Interconnect</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 26.666666666666668%">
+            <span class="chart-bar-text">$4–7B (12%)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Cooling &amp; Power Delivery</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 17.77777777777778%">
+            <span class="chart-bar-text">$3–5B (8%)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Other (storage, CPUs, ops)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 11.11111111111111%">
+            <span class="chart-bar-text">$2–4B (5%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>Once built, these factories are <strong>power-constrained</strong> — a 1 gigawatt facility will never become 2 gigawatts. The physics of atoms imposes a hard ceiling. Within that fixed power envelope, the economic imperative is singular: maximise the number of tokens produced per watt, because tokens per watt translates directly to revenue.</p>
+      <h4 class="article-h3" id="tokens-per-watt-the-new-efficiency-metric">Tokens Per Watt: The New Efficiency Metric</h4>
+      <p><strong>Tokens per watt</strong> (TPW) has emerged as the defining performance metric for AI infrastructure, analogous to how fuel efficiency defines automotive value or yield per acre defines agricultural productivity. It captures the fundamental economic relationship: for a power-constrained factory, more tokens per watt means more revenue from the same fixed asset.</p>
+      <p>SemiAnalysis, the semiconductor research firm, developed the <strong>InferenceX</strong> and later <strong>InferenceMAX</strong> benchmarks to standardise this measurement. Their comprehensive testing across all major AI accelerators confirmed what NVIDIA had been claiming: the GB300 NVL72 (Blackwell Ultra) delivers up to 50x higher throughput per megawatt compared to the Hopper platform, resulting in 35x lower cost per token.</p>
+      <p>This metric matters because it exposes a counterintuitive truth about AI infrastructure economics: <strong>the price of the computer and the cost of the token are only marginally related</strong>. A more expensive system that produces tokens at dramatically higher efficiency is a better investment than a cheaper system with lower token throughput. As Huang emphasised: &quot;If you have the wrong architecture, even if it's free, it's not cheap enough.&quot;</p>
+      <h3 class="article-h2" id="the-throughput-latency-pareto-frontier">The Throughput-Latency Pareto Frontier</h3>
+      <p>At the heart of inference tokenomics lies a fundamental engineering trade-off that governs all hardware design, pricing strategy, and data centre architecture: the tension between <strong>throughput</strong> (tokens per second per watt) and <strong>latency</strong> (tokens per second per user, or interactivity).</p>
+      <h4 class="article-h3" id="understanding-the-trade-off">Understanding the Trade-Off</h4>
+      <p>High throughput means processing the maximum number of tokens per unit of power — ideal for batch processing, free-tier services, and high-volume workloads. High interactivity (low latency) means delivering tokens to individual users as fast as possible — ideal for real-time coding assistants, premium AI services, and agentic workloads that require rapid iteration.</p>
+      <p>These two objectives are fundamentally at odds. Optimising for throughput requires batching many requests together and processing them in parallel, which increases latency for individual users. Optimising for latency requires dedicating more compute to each individual request, which reduces overall throughput. At the hardware level, throughput demands massive floating-point operations (FLOPS), while latency demands massive memory bandwidth — and chips have limited surface area for both.</p>
+      <p>This trade-off creates a <strong>Pareto frontier</strong>: a curve representing the best achievable combination of throughput and latency for a given hardware platform. Every point on this curve represents a different operating configuration with different economic implications.</p>
+      <h4 class="article-h3" id="generational-leaps-in-the-pareto-frontier">Generational Leaps in the Pareto Frontier</h4>
+      <p>NVIDIA's GTC 2026 presentation demonstrated how each hardware generation shifts this frontier dramatically:</p>
+      <div class="article-chart">
+      <div class="chart-title">Throughput at Key Interactivity Points (TPS/MW at 100 TPS/User)</div>
+      <div class="chart-row">
+        <div class="chart-label">Hopper (H200)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 5.88235294117647%">
+            <span class="chart-bar-text">~0.1M TPS/MW</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Blackwell NVL72</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 41.17647058823529%">
+            <span class="chart-bar-text">~0.7M TPS/MW (35x over Hopper)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Vera Rubin NVL72</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 82.35294117647058%">
+            <span class="chart-bar-text">~1.5M TPS/MW (2x over Blackwell)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Vera Rubin + Groq LPX</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">~1.6M+ TPS/MW (extends to 1000+ TPS/User)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>Where Moore's Law might have delivered a 1.5x improvement per generation, NVIDIA's architectural co-design approach delivered 35x from Hopper to Blackwell and another 2–10x from Blackwell to Vera Rubin, depending on the tier. Over just two years, token generation rates within a 1 gigawatt factory are projected to increase from 2 million to 700 million tokens per second — a 350x improvement.</p>
+      <h3 class="article-h2" id="token-pricing-tiers-the-segmentation-of-intelligence">Token Pricing Tiers: The Segmentation of Intelligence</h3>
+      <p>One of the most consequential ideas introduced at GTC 2026 was that AI tokens, like any maturing commodity, will naturally segment into distinct pricing tiers based on model size, speed, context length, and intelligence. This represents a shift from the early days of AI — when there was essentially one product at one price — toward the kind of market segmentation seen in every mature industry.</p>
+      <h4 class="article-h3" id="the-five-tier-framework">The Five-Tier Framework</h4>
+      <p>NVIDIA's presentation outlined a five-tier pricing structure that maps directly onto the throughput-latency Pareto frontier:</p>
+      <div class="article-chart">
+      <div class="chart-title">Token Pricing Tiers (Per Million Tokens)</div>
+      <div class="chart-row">
+        <div class="chart-label">Free Tier</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 3%">
+            <span class="chart-bar-text">$0 — Qwen 3, 235B, 32K context</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Medium Tier</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 10%">
+            <span class="chart-bar-text">$3 — Kimi K2.5, 1T params, 128K context</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">High Tier</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 20%">
+            <span class="chart-bar-text">$6 — GPT MoE, 2T params, 128K context</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Premium Tier</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 55.00000000000001%">
+            <span class="chart-bar-text">$45 — GPT MoE, 2T params, 400K context</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Ultra Tier</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">$150 — GPT MoE, 2T+ params, 400K+ context</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>At the <strong>free tier</strong>, high throughput and smaller models (like Qwen 3 at 235 billion parameters with 32K context) serve as customer acquisition tools — the equivalent of free samples in any industry. At the <strong>ultra tier</strong>, the largest models running at maximum speed with enormous context windows command $150 per million tokens — a 50x premium over the medium tier.</p>
+      <p>This segmentation mirrors established industries. As Huang noted: &quot;Ferrari is all high end, nothing in the free tier. And then somebody else, right? Just depends on the brand.&quot; Search businesses will operate largely at the free tier. Agentic coding assistants like Claude Code and Codex operate at the premium tier. Enterprise research agents may occupy the ultra tier.</p>
+      <h4 class="article-h3" id="price-trends-and-the-deflation-paradox">Price Trends and the Deflation Paradox</h4>
+      <p>The history of token pricing reveals one of the fastest cost deflation curves in technology history:</p>
+      <div class="article-chart">
+      <div class="chart-title">Token Price Decline: GPT-4-Class Performance (Per Million Output Tokens)</div>
+      <div class="chart-row">
+        <div class="chart-label">GPT-4 Launch (Mar 2023)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">$60.00</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">GPT-4 Turbo (Nov 2023)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 50%">
+            <span class="chart-bar-text">$30.00</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">GPT-4o (May 2024)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 25%">
+            <span class="chart-bar-text">$15.00</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">GPT-4o Mini (Jul 2024)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 2%">
+            <span class="chart-bar-text">$0.60</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">GPT-4-equivalent open models (2026)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 2%">
+            <span class="chart-bar-text">$0.40</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>OpenAI CEO Sam Altman has stated that AI usage costs are falling 10x every 12 months. SemiAnalysis data shows a median decline of 50x per year across all inference benchmarks, accelerating to 200x per year after January 2024. What cost $60 per million tokens in early 2023 now costs $0.40 or less for equivalent performance.</p>
+      <p>Yet this cost deflation creates a paradox: while unit costs plummet, total spending explodes. This is because falling costs unlock new use cases, new tiers of service, and new categories of consumption — particularly agentic workloads that consume orders of magnitude more tokens than simple chat interactions.</p>
+      <h3 class="article-h2" id="the-economics-of-ai-factory-revenue">The Economics of AI Factory Revenue</h3>
+      <p>NVIDIA's GTC presentation included a striking revenue model that translates the throughput-latency framework into concrete dollar figures. By allocating a 1 gigawatt data centre equally across four pricing tiers (25% power to each), the model calculates the total annual revenue that each hardware generation can produce.</p>
+      <h4 class="article-h3" id="revenue-per-gigawatt">Revenue Per Gigawatt</h4>
+      <div class="article-chart">
+      <div class="chart-title">Annual Revenue Per Gigawatt by Hardware Generation</div>
+      <div class="chart-row">
+        <div class="chart-label">Blackwell NVL72</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 20%">
+            <span class="chart-bar-text">$30B/year</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Vera Rubin NVL72</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">$150B/year (5x over Blackwell)</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Vera Rubin + Groq LPX</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">$300B/year (10x over Blackwell)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>The implications are profound. A data centre operator running Vera Rubin instead of Blackwell — at the same power consumption — could generate 5x more revenue. Adding the Groq LPX system for the highest-value 25% of workloads doubles the revenue opportunity again.</p>
+      <p>This is the business case that has driven NVIDIA's $1 trillion-plus order backlog through end of 2027 for Blackwell and Vera Rubin systems alone — a figure that excludes Vera CPUs, Groq LPX, storage systems, and next-generation architectures like Feynman.</p>
+      <h4 class="article-h3" id="why-cheaper-hardware-is-not-cheaper">Why &quot;Cheaper&quot; Hardware Is Not Cheaper</h4>
+      <p>This revenue model explains NVIDIA's sustained pricing power and gross margins despite intense competition. The argument from competitors — &quot;our chips are 30% cheaper&quot; — misses the fundamental economics. As Huang argued: &quot;Put that in the context of the factory, and that person is actually demonstrating to you they don't understand AI.&quot;</p>
+      <p>The relevant comparison is not chip price versus chip price, but <strong>revenue generated per watt per dollar of infrastructure</strong>. A more expensive system that produces 5x the token revenue is the economically rational choice. This is why, as Huang stated, &quot;customers would prefer to buy our next-generation product at a higher price than our current generation product at a lower price&quot; — because the <strong>value per token</strong> improves faster than the <strong>price per system</strong> increases.</p>
+      <h3 class="article-h2" id="hardware-architectures-for-token-production">Hardware Architectures for Token Production</h3>
+      <p>The hardware that powers AI inference is rapidly diversifying from monolithic GPU systems into heterogeneous architectures optimised for different parts of the inference pipeline. Understanding these architectures is essential for understanding the cost structure of token production.</p>
+      <h4 class="article-h3" id="gpu-based-systems-the-throughput-engine">GPU-Based Systems: The Throughput Engine</h4>
+      <p>NVIDIA's core inference platform centres on GPU-based systems connected via high-bandwidth NVLink interconnects. The current generation — <strong>Grace Blackwell NVL72</strong> — packs 72 GPUs into a single rack connected by NVLink at terabytes per second of bisection bandwidth. This architecture excels at the <strong>prefill</strong> phase of inference (processing input tokens in parallel) and at high-throughput batch processing.</p>
+      <p>The next generation — <strong>Vera Rubin NVL72</strong> — brings the Rubin GPU with 288 GB of HBM4 memory, 22 TB/s of memory bandwidth, and 50 PFLOPS of NVFP4 compute per chip. Combined with 338 billion transistors per GPU plus 2.5 trillion transistors of HBM4, this represents a massive leap in raw compute density. At GTC 2026, Huang confirmed that the first Vera Rubin rack was already running at Microsoft Azure.</p>
+      <h4 class="article-h3" id="the-groq-lpx-a-latency-optimised-architecture">The Groq LPX: A Latency-Optimised Architecture</h4>
+      <p>NVIDIA's acquisition of Groq's technology introduced a fundamentally different processor architecture optimised for the <strong>decode</strong> phase of inference — the sequential, bandwidth-limited process of generating one output token at a time.</p>
+      <p>The Groq 3 LPU (Language Processing Unit) is a <strong>deterministic dataflow processor</strong> with massive on-chip SRAM:</p>
+      <ul class="article-list">
+      <li><strong>Single chip</strong>: 500 MB SRAM, 150 TB/s SRAM bandwidth, 1.2 PFLOPS (FP8), 98 billion transistors</li>
+      <li><strong>Expanded configuration (8 chips)</strong>: 4 GB SRAM, 1,200 TB/s bandwidth (55x vs single Rubin GPU)</li>
+      <li><strong>Full LPX rack (256 chips)</strong>: 128 GB SRAM, 640 TB/s scale-up bandwidth, 315 PFLOPS</li>
+      </ul>
+      <p>The LPU is statically compiled — the compiler schedules all compute and data movement in advance, with no dynamic scheduling overhead. This makes it deterministic and extremely low-latency, but less flexible than GPUs. It is purpose-built for one workload: autoregressive token generation.</p>
+      <h4 class="article-h3" id="disaggregated-inference-uniting-throughput-and-latency">Disaggregated Inference: Uniting Throughput and Latency</h4>
+      <p>The key architectural innovation is <strong>disaggregated inference</strong>, orchestrated by NVIDIA's <strong>Dynamo</strong> software — described as the &quot;operating system for AI factories.&quot; Dynamo splits the inference pipeline across heterogeneous hardware:</p>
+      <p>1. <strong>Prefill</strong> (processing input tokens): Handled entirely on Vera Rubin GPUs, which excel at parallel computation</p>
+      <p>2. <strong>Decode — Attention</strong>: The attention mechanism during token generation, which requires access to the massive KV cache, runs on Vera Rubin GPUs with their large HBM4 memory</p>
+      <p>3. <strong>Decode — Feed-Forward Network (FFN)</strong>: The bandwidth-limited FFN computation for actual token generation is offloaded to Groq LPX chips with their massive SRAM bandwidth</p>
+      <p>This disaggregation allows each processor type to operate at its sweet spot. The two systems communicate via Ethernet with a special low-latency mode that halves standard latency. The result: 35x higher inference throughput per megawatt at the premium tier, with the ability to sustain token generation speeds above 1,000 tokens per second per user — a regime where GPU-only architectures simply run out of bandwidth.</p>
+      <h4 class="article-h3" id="three-memory-tiers">Three Memory Tiers</h4>
+      <p>NVIDIA is now the only company optimising across three distinct memory technologies simultaneously:</p>
+      <ul class="article-list">
+      <li><strong>HBM4</strong> (High Bandwidth Memory): 288 GB per Rubin GPU, 22 TB/s — high capacity, moderate bandwidth</li>
+      <li><strong>LPDDR5</strong> (Low-Power DDR): Used in Vera CPUs for tool use and agent memory — high capacity, low power</li>
+      <li><strong>SRAM</strong> (Static RAM): 500 MB per Groq chip, 150 TB/s — tiny capacity, extreme bandwidth</li>
+      </ul>
+      <p>This tri-memory architecture enables different workloads to be placed on the optimal memory tier, maximising overall system efficiency.</p>
+      <h3 class="article-h2" id="the-agentic-consumption-explosion">The Agentic Consumption Explosion</h3>
+      <p>The shift from chatbot-style interactions to <strong>agentic AI</strong> — autonomous systems that perform multi-step tasks, use tools, spawn sub-agents, and iterate on their own outputs — has fundamentally changed the token consumption profile of AI systems.</p>
+      <h4 class="article-h3" id="from-chat-to-agents">From Chat to Agents</h4>
+      <p>A typical ChatGPT conversation might consume a few thousand tokens. An agentic coding session with Claude Code or Codex can consume <strong>50 million tokens in a single day</strong> — a figure Jensen Huang cited directly from user reports. At $150 per million tokens for premium-tier inference, that is $7,500 per day for a single power user. At the more common $3–6 per million token tier, it is $150–300 per day.</p>
+      <p>This is not a theoretical projection. As Huang stated at the analyst call: &quot;I'm really hoping that somebody who makes $2,000 a day is spending $1,000 a day of tokens.&quot; The economics are compelling: if an engineer earning $300,000–400,000 per year can be made even moderately more productive by deploying $50–100 per day of AI inference, the return on investment is overwhelming.</p>
+      <h4 class="article-h3" id="token-budgets-as-compensation">Token Budgets as Compensation</h4>
+      <p>A paradigm shift is underway in how companies think about employee productivity. As Huang described it: &quot;When you come to work, they give you a laptop and tokens. Token budget is now a real thing.&quot; The implication is stark: &quot;The idea that you would hire a $300,000 engineer and they spend no tokens in doing their job, you've got to ask the question, what are they doing?&quot;</p>
+      <p>Industry data suggests that power users running large code generation workloads can consume $12,000–100,000 per year in inference costs. Some analysts now frame AI inference as the <strong>fourth component of engineering compensation</strong> alongside salary, bonus, and equity — with fully loaded costs potentially reaching $475,000 when adding $100,000 in annual inference costs to a $375,000 base compensation.</p>
+      <h4 class="article-h3" id="the-agentic-cost-multiplier">The Agentic Cost Multiplier</h4>
+      <p>Agentic systems consume tokens at fundamentally different rates than interactive chat:</p>
+      <ul class="article-list">
+      <li>A <strong>Reflexion loop</strong> (where an agent iterates on its own output) running for 10 cycles consumes 50x the tokens of a single linear pass</li>
+      <li>An <strong>unconstrained agent</strong> solving a software engineering issue can cost $5–8 per task</li>
+      <li>A <strong>mid-sized product</strong> with 1,000 daily users in multi-turn agent conversations can burn through 5–10 million tokens per month</li>
+      <li>An <strong>autonomous research session</strong> spanning hours can consume tens of millions of tokens</li>
+      </ul>
+      <p>This explains why, despite 10x annual cost declines per token, enterprise AI spending is accelerating. Inference now accounts for approximately 85% of enterprise AI budgets, up from negligible shares just two years ago.</p>
+      <h3 class="article-h2" id="the-hyperscaler-investment-cycle">The Hyperscaler Investment Cycle</h3>
+      <p>The infrastructure required to produce tokens at scale has triggered the largest capital expenditure cycle in technology history. Understanding this investment wave — and the economic logic behind it — is central to understanding inference tokenomics.</p>
+      <h4 class="article-h3" id="capex-at-historic-levels">CapEx at Historic Levels</h4>
+      <div class="article-chart">
+      <div class="chart-title">Hyperscaler AI CapEx (2024–2026)</div>
+      <div class="chart-row">
+        <div class="chart-label">2024</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 43.75%">
+            <span class="chart-bar-text">~$250B</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">2025</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 68.75%">
+            <span class="chart-bar-text">~$440B</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">2026 (projected)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">~$600–650B</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>The top five hyperscalers (Amazon, Microsoft, Google, Meta, Oracle) are expected to spend approximately $600–650 billion in 2026, up 36–70% year-over-year depending on the estimate. Capital intensity has reached historically unprecedented levels of 45–57% of revenue, with some companies spending approximately 90% of their operating cash flow on capex.</p>
+      <p>Approximately 75% of this aggregate spending — roughly $450 billion — is directed specifically at AI infrastructure: GPUs, accelerators, networking, and data centre construction.</p>
+      <h4 class="article-h3" id="the-revenue-justification">The Revenue Justification</h4>
+      <p>The central question in AI infrastructure economics is whether this spending can be justified by downstream revenue. The current CapEx-to-cloud-revenue ratio for hyperscalers sits at approximately 1.2x — they are spending 20% more on infrastructure than they earn from cloud and API services. This gap is being funded by operating cash flow from existing businesses and, increasingly, by debt markets.</p>
+      <p>NVIDIA's Jensen Huang addressed this directly at the analyst call, pointing to the private revenue trajectories of AI companies: &quot;No companies in history have ever grown, as a start-up company, increased revenues by $1 billion or $2 billion a week. That's what they're experiencing right now.&quot; OpenAI hit $25 billion in annualised revenue by February 2026. Anthropic is tracking toward $9–20 billion.</p>
+      <p>Huang's broader argument: the $2 trillion IT software industry will be transformed into an $8 trillion industry that resells enormous quantities of tokens. &quot;100% of the world's IT industry will become resellers of OpenAI and Anthropic,&quot; he predicted. If even a fraction of this materialises, current infrastructure spending is rational.</p>
+      <h4 class="article-h3" id="supply-and-demand-dynamics">Supply and Demand Dynamics</h4>
+      <p>NVIDIA disclosed $1 trillion-plus in firm demand and purchase orders for Blackwell and Vera Rubin through end of 2027 — up from $500 billion announced a year earlier. This figure excludes standalone Vera CPUs, Groq LPX, storage systems, and next-generation Feynman architecture products.</p>
+      <p>The supply chain is now producing at scale: &quot;We have now set up a supply chain that can manufacture thousands [of racks] a week, essentially multi-gigawatts of AI factories per month.&quot; Yet Huang acknowledged the system remains supply-constrained across multiple dimensions — not a single bottleneck, but a complex web of dependencies spanning silicon fabrication, copper interconnects, optical components, power delivery, cooling, and physical construction.</p>
+      <h3 class="article-h2" id="market-structure-who-produces-and-consumes-tokens">Market Structure: Who Produces and Consumes Tokens</h3>
+      <p>The AI inference market is structured across several layers, each with distinct economics and competitive dynamics.</p>
+      <h4 class="article-h3" id="model-providers">Model Providers</h4>
+      <p>The top model providers by token volume:</p>
+      <p>1. <strong>OpenAI</strong> — The largest by total tokens generated, with $25B+ in annualised revenue</p>
+      <p>2. <strong>Open-source models (aggregate)</strong> — Collectively the second-largest category, dominated by Meta's Llama, Alibaba's Qwen, and DeepSeek</p>
+      <p>3. <strong>Anthropic</strong> — Third largest, on track for $9–20B in 2026 revenue</p>
+      <p>4. <strong>xAI, Google, others</strong> — Rapidly growing but smaller in aggregate token volume</p>
+      <h4 class="article-h3" id="infrastructure-providers">Infrastructure Providers</h4>
+      <div class="article-chart">
+      <div class="chart-title">NVIDIA Revenue Split by Customer Type</div>
+      <div class="chart-row">
+        <div class="chart-label">Hyperscalers (CSPs)</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 100%">
+            <span class="chart-bar-text">~60% of accelerated computing revenue</span>
+          </div>
+        </div>
+      </div>
+<div class="chart-row">
+        <div class="chart-label">Enterprise, Regional Cloud, On-Prem</div>
+        <div class="chart-bar-container">
+          <div class="chart-bar" style="width: 66.66666666666666%">
+            <span class="chart-bar-text">~40% (impossible without full stack)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <p>The 60/40 split between hyperscalers and non-hyperscaler customers represents a key structural feature. The 60% hyperscaler segment includes both NVIDIA competing on chip merit and NVIDIA bringing CUDA developers to cloud platforms. The 40% enterprise/regional segment is &quot;completely impossible if you just build a chip, because they don't buy chips — they buy platforms.&quot;</p>
+      <h4 class="article-h3" id="inference-service-providers-isps">Inference Service Providers (ISPs)</h4>
+      <p>A rapidly growing category of specialised token producers has emerged: <strong>inference service providers</strong> (ISPs) like Fireworks AI, Together AI, Cerebras, and others. These companies focus exclusively on serving open-source models at the lowest possible cost per token.</p>
+      <p>Fireworks AI exemplifies the growth trajectory: from approximately $6.5 million in ARR in May 2024 to $130 million by May 2025 — 20x growth in a single year — with a $4 billion valuation after a $254 million Series C. The number of inference providers grew from 27 in early 2025 to 90 by late 2025.</p>
+      <h3 class="article-h2" id="the-unit-economics-of-token-production">The Unit Economics of Token Production</h3>
+      <p>Understanding the cost structure of producing tokens is essential for evaluating the sustainability of current pricing and predicting future market dynamics.</p>
+      <h4 class="article-h3" id="cost-components">Cost Components</h4>
+      <p>The total cost of producing a million tokens includes:</p>
+      <ul class="article-list">
+      <li><strong>Silicon amortisation</strong>: The cost of GPU/accelerator hardware, amortised over 4–6 years</li>
+      <li><strong>Power</strong>: Electricity consumed during inference, typically $0.04–0.10 per kWh at data centre scale</li>
+      <li><strong>Facility costs</strong>: Building amortisation, cooling, maintenance — roughly 30–40% of total operating costs</li>
+      <li><strong>Networking</strong>: High-speed interconnects, both within-rack (NVLink) and between-rack (InfiniBand/Ethernet)</li>
+      <li><strong>Software and orchestration</strong>: Inference serving frameworks, model optimisation, routing</li>
+      <li><strong>Labour and overhead</strong>: Engineering, operations, support</li>
+      </ul>
+      <h4 class="article-h3" id="the-cost-revenue-gap">The Cost-Revenue Gap</h4>
+      <p>A critical observation: many frontier AI companies are currently pricing inference below cost. OpenAI generated approximately $3.7 billion in revenue in one period while losing an estimated $5 billion — spending $1.35 for every $1.00 earned. This below-cost pricing is funded by venture capital ($6.6 billion from a single Softbank round for OpenAI) and hyperscaler cross-subsidies.</p>
+      <p>The market consensus is that this is unsustainable and that meaningful price normalisation will occur within 12–24 months. However, the countervailing force is the relentless improvement in inference hardware efficiency — if cost-per-token continues to fall at 10–50x per year while revenue per token remains stable, margins may improve even at current prices.</p>
+      <h4 class="article-h3" id="the-software-multiplier">The Software Multiplier</h4>
+      <p>One of the most underappreciated aspects of inference economics is the role of software optimisation. NVIDIA's Dynamo 1.0 — now in production and adopted by all major cloud providers — boosted inference performance on Blackwell GPUs by up to 7x through pure software improvements on the same hardware. Jensen Huang cited an example where inference service providers saw token speeds increase from an average of 700 tokens per second to nearly 5,000 after NVIDIA software updates — the same system, 7x the output.</p>
+      <p>This software layer is a continuous source of efficiency gains that compounds on top of hardware improvements, contributing to the exponential cost decline in token production.</p>
+      <h3 class="article-h2" id="the-future-of-tokenomics">The Future of Tokenomics</h3>
+      <h4 class="article-h3" id="convergence-of-training-and-inference">Convergence of Training and Inference</h4>
+      <p>The traditional distinction between training (teaching a model) and inference (using it) is blurring. Post-training techniques like reinforcement learning with verifiable feedback require enormous inference-like computation. Continuous learning and personalisation mean models are always partially in a training mode. Huang estimated that future post-training compute requirements could be &quot;probably a million times more than pretraining.&quot;</p>
+      <p>His stated aspiration: &quot;99% of the world's compute goes towards inference. And the reason for that is because inference is where we translate tokens generated to economics. Nobody pays you for learning.&quot;</p>
+      <h4 class="article-h3" id="physical-ai-and-the-40-that-becomes-70">Physical AI and the 40% That Becomes 70%</h4>
+      <p>Currently, 60% of NVIDIA's accelerated computing revenue comes from hyperscalers and 40% from enterprise, regional cloud, and on-premises deployments. Huang predicted that as <strong>physical AI</strong> — robotics, autonomous vehicles, industrial automation — reaches its inflection point, the enterprise segment could grow from 40% to 70% of the total market. Physical AI requires on-premises inference at the edge, in factories, and in vehicles, expanding the addressable market from the ~$2 trillion digital economy to the $50–70 trillion physical economy.</p>
+      <h4 class="article-h3" id="the-nvidia-roadmap">The NVIDIA Roadmap</h4>
+      <p>NVIDIA's annual architecture cadence ensures continuous compression of token costs:</p>
+      <ul class="article-list">
+      <li><strong>Blackwell</strong> (current): Established inference leadership, 35x over Hopper</li>
+      <li><strong>Vera Rubin</strong> (2026 H2): 2–10x over Blackwell across tiers, adding Groq LPX for latency-sensitive workloads</li>
+      <li><strong>Vera Rubin Ultra</strong>: NVLink 144, Groq LP35 with NVFP4 — further X-factor improvements</li>
+      <li><strong>Feynman</strong> (future): New GPU, new LPU (LP40), new CPU (Rosa), copper and co-packaged optics scale-up — NVLink 1152+</li>
+      </ul>
+      <p>Each generation shifts the Pareto frontier up (more throughput) and out (lower latency), simultaneously reducing cost-per-token and enabling new premium tiers. The token generation rate for a 1 GW factory is projected to reach 700 million tokens per second with Vera Rubin — 350x the rate achievable with current hardware.</p>
+      <h4 class="article-h3" id="it-industry-transformation">IT Industry Transformation</h4>
+      <p>Perhaps the most expansive claim in NVIDIA's tokenomics thesis is that the entire IT software industry — currently approximately $2 trillion in annual revenue — will transform from licensing software to <strong>generating and reselling tokens</strong>. Every enterprise software company will integrate foundation models from OpenAI, Anthropic, and open-source providers into agentic systems using frameworks like OpenClaw (open source) and NemoClaw (enterprise). These companies become, in effect, token resellers — with changed revenue models, higher gross margins (offset by token COGS), and dramatically greater value delivery.</p>
+      <p>If this vision materialises, the total addressable market for token production infrastructure is not the current $100 billion inference market but something closer to $8 trillion — a figure that would make today's $600 billion CapEx cycle look like seed funding.</p>
+      <h3 class="article-h2" id="conclusion">Conclusion</h3>
+      <p>Inference tokenomics represents a fundamental reframing of how the technology industry creates and captures value. The core insight is deceptively simple: AI factories consume power and produce tokens; every optimisation that increases tokens per watt drives revenue; and the market for tokens is segmenting into tiers that mirror every mature commodity market in economic history.</p>
+      <p>The numbers behind this framework are staggering. Over $600 billion in annual infrastructure investment. A 350x improvement in token production efficiency in two years. Token prices declining at 10–50x per year while total consumption explodes. A $1 trillion-plus order backlog for hardware that won't all ship for 21 months. AI companies growing revenue at $1–2 billion per week.</p>
+      <p>The risks are real: below-cost pricing across the industry, a CapEx-to-revenue ratio above 1.0x for hyperscalers, and the possibility that AI revenue growth fails to match infrastructure investment timelines. But the countervailing forces — relentless hardware efficiency gains, software optimisation multipliers, expanding use cases from agentic AI to physical AI, and the potential transformation of the entire IT industry into token resellers — suggest that tokenomics is not a bubble narrative but a structural economic shift.</p>
+      <p>For investors, the key metrics to watch are tokens per watt per generation, revenue per gigawatt of deployed infrastructure, the CapEx-to-AI-revenue ratio at hyperscalers, and the rate at which enterprise token consumption grows. For engineers and enterprise leaders, the actionable insight is simpler: tokens are now a line item in every budget, every productivity calculation, and every competitive analysis. The AI factory era has begun.</p>
+      </div>
+    </div>
+
+    <div class="fact-check-timestamp">
+      Published Mar 18, 2026
+    </div>
+  </main>
+
+  <script>
+    // Highlight active TOC item on scroll
+    (function() {
+      var toc = document.querySelector('.research-toc');
+      if (!toc) return;
+      var links = toc.querySelectorAll('.toc-link');
+      var ids = Array.prototype.map.call(links, function(a) { return a.getAttribute('href').slice(1); });
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var active = '';
+        for (var i = 0; i < ids.length; i++) {
+          var el = document.getElementById(ids[i]);
+          if (el && el.offsetTop <= scrollY + 120) active = ids[i];
+        }
+        links.forEach(function(a) {
+          a.classList.toggle('toc-active', a.getAttribute('href') === '#' + active);
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>
