@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { listVideos, getVideo } = require('./db');
+const { listVideos, getVideo, listResearch, getResearch } = require('./db');
 
 const SITE_DIR = path.join(__dirname, '..', 'site');
 
@@ -43,7 +43,7 @@ function htmlFooter() {
 </html>`;
 }
 
-function generateIndex(videos) {
+function generateIndex(videos, researchItems) {
   const videoCards = videos.map(v => `
       <div class="video-card">
         <a href="/video/${v.id}.html">
@@ -78,6 +78,22 @@ function generateIndex(videos) {
 ${videoCards}
     </div>
     ${emptyState}
+
+    ${researchItems && researchItems.length > 0 ? `
+    <div class="section-divider"></div>
+    <h2 class="section-header">Research</h2>
+    <div class="research-grid">
+      ${researchItems.map(r => `
+      <div class="research-card">
+        <a href="/research/${r.id}.html">
+          <div class="research-card-body">
+            <div class="research-card-title">${escapeHtml(r.title)}</div>
+            <div class="research-card-summary">${escapeHtml(r.summary)}</div>
+            <div class="research-card-date">${formatDate(r.created_at)}</div>
+          </div>
+        </a>
+      </div>`).join('\n')}
+    </div>` : ''}
   </main>
 
 ${htmlFooter()}`;
@@ -268,13 +284,36 @@ function generateVideoPage(video) {
 ${htmlFooter()}`;
 }
 
+function generateResearchPage(research) {
+  return `${htmlHead(`${research.title} — Research Primer`)}
+  <main class="container">
+    <a href="/" class="back-link">&larr; Back to home</a>
+
+    <div class="research-detail-header">
+      <h1>${escapeHtml(research.title)}</h1>
+      <div class="meta">Research Primer &middot; ${formatDate(research.created_at)}</div>
+    </div>
+
+    <div class="research-article transcript-article">
+      ${formatArticle(research.content)}
+    </div>
+
+    <div class="fact-check-timestamp">
+      Published ${formatDate(research.created_at)}
+    </div>
+  </main>
+
+${htmlFooter()}`;
+}
+
 async function main() {
   const videos = await listVideos();
+  const researchItems = await listResearch();
 
   // Generate index page
-  const indexHtml = generateIndex(videos);
+  const indexHtml = generateIndex(videos, researchItems);
   fs.writeFileSync(path.join(SITE_DIR, 'index.html'), indexHtml);
-  console.log(`Generated index.html (${videos.length} videos)`);
+  console.log(`Generated index.html (${videos.length} videos, ${researchItems.length} research articles)`);
 
   // Generate individual video pages
   const videoDir = path.join(SITE_DIR, 'video');
@@ -286,6 +325,18 @@ async function main() {
     const videoHtml = generateVideoPage(fullVideo);
     fs.writeFileSync(path.join(videoDir, `${v.id}.html`), videoHtml);
     console.log(`Generated video/${v.id}.html`);
+  }
+
+  // Generate individual research pages
+  const researchDir = path.join(SITE_DIR, 'research');
+  if (!fs.existsSync(researchDir)) fs.mkdirSync(researchDir, { recursive: true });
+
+  for (const r of researchItems) {
+    const fullResearch = await getResearch(r.id);
+    if (!fullResearch) continue;
+    const researchHtml = generateResearchPage(fullResearch);
+    fs.writeFileSync(path.join(researchDir, `${r.id}.html`), researchHtml);
+    console.log(`Generated research/${r.id}.html`);
   }
 
   console.log('Site generation complete.');

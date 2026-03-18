@@ -54,6 +54,15 @@ async function initDb() {
     )
   `);
   db.run(`CREATE INDEX IF NOT EXISTS idx_claims_video ON claims(video_id)`);
+  db.run(`
+    CREATE TABLE IF NOT EXISTS research (
+      id TEXT PRIMARY KEY,
+      title TEXT NOT NULL,
+      summary TEXT NOT NULL,
+      content TEXT NOT NULL,
+      created_at TEXT NOT NULL
+    )
+  `);
   saveDb(db);
   db.close();
   console.log('Database initialized at', DB_PATH);
@@ -152,6 +161,54 @@ async function getVideo(videoId) {
   return video;
 }
 
+async function saveResearch(id, title, summary, content) {
+  const db = await getDb();
+
+  // Delete existing data for this research (allow re-research)
+  db.run('DELETE FROM research WHERE id = ?', [id]);
+
+  // Ensure table exists (migration for older databases)
+  try {
+    db.run(`CREATE TABLE IF NOT EXISTS research (
+      id TEXT PRIMARY KEY, title TEXT NOT NULL, summary TEXT NOT NULL,
+      content TEXT NOT NULL, created_at TEXT NOT NULL
+    )`);
+  } catch (e) { /* table already exists */ }
+
+  db.run(`INSERT INTO research (id, title, summary, content, created_at) VALUES (?, ?, ?, ?, ?)`, [
+    id, title, summary, content, new Date().toISOString()
+  ]);
+
+  saveDb(db);
+  db.close();
+  console.log(`Saved research: "${title}" (${id})`);
+}
+
+async function listResearch() {
+  const db = await getDb();
+  const rows = db.exec('SELECT id, title, summary, created_at FROM research ORDER BY created_at DESC');
+  db.close();
+  if (!rows.length || !rows[0].values.length) return [];
+  return rows[0].values.map(row => ({
+    id: row[0], title: row[1], summary: row[2], created_at: row[3]
+  }));
+}
+
+async function getResearch(researchId) {
+  const db = await getDb();
+  const rows = db.exec('SELECT * FROM research WHERE id = ?', [researchId]);
+  if (!rows.length || !rows[0].values.length) {
+    db.close();
+    return null;
+  }
+  const cols = rows[0].columns;
+  const vals = rows[0].values[0];
+  const research = {};
+  cols.forEach((col, i) => research[col] = vals[i]);
+  db.close();
+  return research;
+}
+
 // CLI interface
 async function main() {
   const command = process.argv[2];
@@ -184,4 +241,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { getDb, saveDb, initDb, saveResult, listVideos, getVideo };
+module.exports = { getDb, saveDb, initDb, saveResult, listVideos, getVideo, saveResearch, listResearch, getResearch };
