@@ -27,6 +27,18 @@
   --verdict-fearmongering: #d35400;
 }
 
+[data-theme="light"] {
+  --bg: #f5f5f5;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f0f0;
+  --border: #ddd;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --text-dim: #888;
+  --accent: #1a8a82;
+  --accent-dim: #6bb5af;
+}
+
 html {
   font-size: 15px;
 }
@@ -385,7 +397,7 @@ a:hover {
 }
 
 .transcript-article strong {
-  color: #fff;
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -551,6 +563,31 @@ a:hover {
 
 .research-article {
   margin-bottom: 48px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-toggle-fixed {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
 }
 
 /* Responsive */

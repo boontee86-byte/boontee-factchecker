@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why I DISAGREE With Mr. Loo's &quot;Crash Buying&quot; Strategy — Fact Check</title>
-  <link rel="stylesheet" href="/css/style.css?v=1773796941901">
+  <link rel="stylesheet" href="/css/style.css?v=1773797552580">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
 </head>
 <body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
   <main class="container">
     <a href="/" class="back-link">&larr; Back to all videos</a>
 
@@ -192,5 +194,18 @@
       <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
     </div>
   </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
 </body>
 </html>

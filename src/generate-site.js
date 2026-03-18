@@ -26,8 +26,10 @@ function htmlHead(title) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(title)}</title>
   <link rel="stylesheet" href="/css/style.css?v=${Date.now()}">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
 </head>
-<body>`;
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>`;
 }
 
 function htmlFooter() {
@@ -39,6 +41,19 @@ function htmlFooter() {
       <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
     </div>
   </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
 </body>
 </html>`;
 }
