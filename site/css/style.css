@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,6 +7,7 @@
 }
 
 :root {
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --bg: #0a0a0a;
   --bg-card: #141414;
@@ -44,7 +45,7 @@ html {
 }
 
 body {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -82,6 +83,7 @@ a:hover {
 }
 
 .site-header .subtitle {
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 400;
@@ -155,6 +157,7 @@ a:hover {
 }
 
 .video-card .card-meta {
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-bottom: 8px;
@@ -165,6 +168,7 @@ a:hover {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 3px;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -184,6 +188,7 @@ a:hover {
 .back-link {
   display: inline-block;
   margin-bottom: 24px;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-muted);
 }
@@ -203,6 +208,7 @@ a:hover {
 }
 
 .video-detail-header .meta {
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-bottom: 16px;
@@ -225,6 +231,7 @@ a:hover {
 }
 
 .overall-verdict .verdict-label {
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -244,6 +251,7 @@ a:hover {
 .summary h2,
 .claims-section h2,
 .source-quality h2 {
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -279,6 +287,7 @@ a:hover {
 }
 
 .claim-card .claim-timestamp {
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-dim);
   margin-bottom: 8px;
@@ -295,6 +304,7 @@ a:hover {
 }
 
 .claim-card .claim-sources {
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   margin-bottom: 8px;
 }
@@ -317,6 +327,7 @@ a:hover {
 }
 
 .transcript-section h2 {
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -339,6 +350,7 @@ a:hover {
 }
 
 .transcript-timestamp {
+  font-family: var(--font-mono);
   color: var(--accent-dim);
   font-size: 0.7rem;
   font-weight: 500;
@@ -415,6 +427,7 @@ a:hover {
 }
 
 .raw-transcript-toggle summary {
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
   cursor: pointer;
@@ -427,6 +440,7 @@ a:hover {
 }
 
 .raw-transcript-toggle .raw-transcript {
+  font-family: var(--font-mono);
   padding: 16px;
   border-top: 1px solid var(--border);
 }
@@ -443,6 +457,7 @@ a:hover {
 
 /* Fact-check timestamp */
 .fact-check-timestamp {
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-dim);
   text-align: right;
@@ -455,6 +470,7 @@ a:hover {
 .site-footer {
   padding: 32px 0;
   border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-dim);
   text-align: center;
@@ -484,6 +500,7 @@ a:hover {
 }
 
 .section-header {
+  font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
@@ -548,6 +565,7 @@ a:hover {
 }
 
 .research-card-date {
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-dim);
 }
@@ -570,6 +588,7 @@ a:hover {
 }
 
 .research-detail-header .meta {
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
 }
@@ -602,6 +621,7 @@ a:hover {
 }
 
 .research-toc .toc-title {
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -670,6 +690,7 @@ a:hover {
 }
 
 .article-chart .chart-label {
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text);
   width: 140px;
@@ -698,6 +719,7 @@ a:hover {
 }
 
 .article-chart .chart-bar-text {
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--text);
   white-space: nowrap;

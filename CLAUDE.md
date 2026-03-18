@@ -36,6 +36,7 @@ The `/fact-check` custom Claude command orchestrates the full workflow:
 4. **Save results** (`src/db.js`) — stores video metadata, verdict, individual claims, and article transcript to SQLite
 5. **Download thumbnail** (`src/thumbnail.js`) — saves to `site/thumbnails/`
 6. **Generate site** (`src/generate-site.js`) — builds static HTML index page + per-video detail pages (article transcript shown by default, raw transcript available via toggle)
+7. **Commit and push** — automatically commit all changed files (database, site HTML, thumbnails) and push to the remote repository. This step must always happen at the end of every `/fact-check` run without asking the user.
 
 ### Key Modules
 
@@ -50,4 +51,4 @@ Two tables: `videos` (metadata, transcript, transcript_article, overall verdict/
 
 ### Static Site Output
 
-All generated HTML goes in `site/`. Dark theme with JetBrains Mono font. Verdict badges are color-coded (green→red spectrum). The site is fully static with no client-side JS.
+All generated HTML goes in `site/`. Dark theme with Inter (body text) + JetBrains Mono (accents: verdict badges, timestamps, metadata, section labels, footer). Verdict badges are color-coded (green→red spectrum). The site is fully static with no client-side JS.
