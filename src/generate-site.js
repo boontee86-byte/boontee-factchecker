@@ -281,7 +281,7 @@ function renderChart(title, rows) {
         <div class="chart-label">${escapeHtml(r.label)}</div>
         <div class="chart-bar-container">
           <div class="chart-bar" style="width: ${widthPct}%">
-            <span class="chart-bar-text">${escapeHtml(r.pct)}${r.detail ? ' — ' + escapeHtml(r.detail) : ''}</span>
+            <span class="chart-bar-text">${r.detail ? escapeHtml(r.detail) : escapeHtml(r.pct)}</span>
           </div>
         </div>
       </div>`;

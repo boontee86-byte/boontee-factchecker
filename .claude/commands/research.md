@@ -67,13 +67,15 @@ Write a comprehensive, publication-quality primer article (3,000-5,000+ words). 
 
    ```
    :::chart "Chart Title"
-   Label 1|60%|$1.5T
-   Label 2|15%|$375B
-   Label 3|10%|$250B
+   Label 1|60|$1.5T (60%)
+   Label 2|15|$375B (15%)
+   Label 3|10|$250B (10%)
    :::
    ```
 
-   Each row is: `Label|Percentage|Optional detail text`. The percentage drives the bar width. Use these charts for:
+   Each row is: `Label|BarWidth|DisplayText`. The **BarWidth** is a number (0–100) that controls the bar length — it is NOT shown to readers. The **DisplayText** is what appears on the bar — this is what readers see, so make it meaningful (e.g. "$1.5T (60%)", "9.3% annualised", "$116.3B"). If DisplayText is omitted, the BarWidth is shown as-is. Always provide DisplayText for clarity.
+
+   Use these charts for:
    - **Market size breakdowns** — e.g., sub-categories of a total market
    - **Investor type distributions** — e.g., who holds what percentage
    - **Return comparisons** — e.g., asset class returns side by side
