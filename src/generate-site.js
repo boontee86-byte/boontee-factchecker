@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { listVideos, getVideo, listResearch, getResearch } = require('./db');
 
-const SITE_DIR = path.join(__dirname, '..', 'site');
+const SITE_DIR = path.join(__dirname, '..', 'docs');
 
 function verdictClass(verdict) {
   return (verdict || '').toLowerCase().replace(/\s+/g, '-');

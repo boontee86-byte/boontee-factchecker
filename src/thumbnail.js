@@ -15,7 +15,7 @@ function extractVideoId(url) {
 
 async function downloadThumbnail(videoId) {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-  const outDir = path.join(__dirname, '..', 'site', 'thumbnails');
+  const outDir = path.join(__dirname, '..', 'docs', 'thumbnails');
   const outPath = path.join(outDir, `${videoId}.jpg`);
 
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
