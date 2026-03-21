@@ -75,20 +75,23 @@ function generateIndex(videos, researchItems) {
     ? '<div class="empty-state">No videos fact-checked yet. Check back soon.</div>'
     : '';
 
-  return `${htmlHead('YouTube Fact-Checker — Finance & Investing')}
+  return `${htmlHead('BoonTee Insights — Finance & Investing')}
   <header class="site-header">
     <div class="container">
-      <h1>YouTube Fact-Checker</h1>
-      <div class="subtitle">Verifying claims in finance & investing videos</div>
+      <h1>BoonTee Insights</h1>
+      <div class="subtitle">Finance & investing analysis, fact-checks, and research</div>
     </div>
   </header>
 
   <main class="container">
     <div class="intro">
-      <p>This site fact-checks claims made in YouTube finance and investing videos. Each video's transcript is analyzed, and key financial claims are verified against primary sources including SEC filings, Federal Reserve data, and established financial research.</p>
-      <p>I'm <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>, a finance content creator. I built this to promote accuracy in the financial content space. Want to suggest a video for fact-checking? <a href="https://t.me/boontee86" target="_blank">Reach out on Telegram</a>.</p>
+      <p>I'm <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>, a finance content creator sharing insights on markets, investing, and financial literacy. This site is where I publish my work — from fact-checking popular YouTube finance videos to deep-dive research on topics that matter to investors.</p>
+      <p>Have a video you'd like me to fact-check or a topic you'd like explored? <a href="https://t.me/boontee86" target="_blank">Reach out on Telegram</a>.</p>
     </div>
 
+    <div class="section-divider"></div>
+    <h2 class="section-header">Fact-Checks</h2>
+    <p class="section-description">Claims in YouTube finance and investing videos, verified against primary sources including SEC filings, Federal Reserve data, and established financial research.</p>
     <div class="video-grid">
 ${videoCards}
     </div>
@@ -97,6 +100,7 @@ ${videoCards}
     ${researchItems && researchItems.length > 0 ? `
     <div class="section-divider"></div>
     <h2 class="section-header">Research</h2>
+    <p class="section-description">AI-assisted deep dives into financial topics — primers designed to help you understand the forces shaping markets.</p>
     <div class="research-grid">
       ${researchItems.map(r => {
         const thumbExt = ['png', 'jpg', 'webp'].find(ext => fs.existsSync(path.join(SITE_DIR, 'thumbnails', `${r.id}.${ext}`)));
