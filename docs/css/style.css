@@ -111,7 +111,7 @@ a:hover {
 /* Video Grid */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 48px;
 }
@@ -519,7 +519,7 @@ a:hover {
 /* Research Grid */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 48px;
 }
@@ -796,5 +796,5 @@ a:hover {
   html { font-size: 14px; }
   .container { padding: 0 16px; }
   .site-header { padding: 32px 0 24px; }
-  .video-grid { grid-template-columns: 1fr; }
+  .video-grid, .research-grid { grid-template-columns: 1fr; }
 }
