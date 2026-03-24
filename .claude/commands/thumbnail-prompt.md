@@ -13,38 +13,42 @@ Generate a professional image generation prompt for a research article thumbnail
 
 ### Resolution & Aspect Ratio
 
-- **Aspect ratio**: 16:9 (landscape)
+- **Aspect ratio**: 16:9 (widescreen)
 - **Resolution**: 1536×864 pixels
 - Always include both the aspect ratio and resolution in the generated prompt
 
 ### Style Specification (follow exactly for consistency)
 
-- **Medium**: Digital illustration with subtle 3D depth. Not photorealistic, not flat vector — aim for a refined editorial illustration style with soft dimensionality
-- **Rendering**: Smooth gradients, soft shadows, anti-aliased edges. No harsh outlines or cartoon-like strokes. Surfaces should feel slightly matte with occasional specular highlights on focal elements
-- **Composition**: The title text is the primary focal element, centred in the image. Visual metaphor imagery serves as a supporting backdrop behind or around the text. Generous negative space around the text (at least 30% of the image). No border, no frame. The visual metaphor elements should occupy the background/midground and never obscure the title
-- **Background**: Always a deep, dark tone — deep navy (#0a1628), charcoal (#1a1a2e), or near-black (#0d0d1a). Smooth gradient permitted (e.g., slightly lighter towards the centre to create a vignette). No patterns or textures in the background itself
-- **Lighting**: Single primary light source from the upper-left at approximately 45 degrees. Soft, diffused cinematic lighting. Subtle rim lighting or edge glow on the focal element to separate it from the background. No harsh shadows
-- **Colour palette**: Strictly limited to 2-3 accent colours maximum against the dark background. Accent colours should be muted and sophisticated, not saturated or neon. Choose accents thematically (gold/amber for debt/wealth, teal/blue for stability/tech, muted green for growth, warm red-orange for risk)
-- **Texture**: Subtle film grain overlay (barely perceptible, ~5% opacity). Focal elements may have fine internal detail (grid lines, subtle patterns, translucency) but should not look busy
-- **Mood**: Calm, authoritative, and contemplative — like the cover of a high-end financial research report
-- **Title text**: The topic name must be the hero element of the image — bold, impossible to miss, and designed to grab attention. Use a clean, modern sans-serif typeface (like Helvetica Neue Bold, Inter Black, or DM Sans ExtraBold). The text MUST be rendered on a single horizontal line — never split across multiple lines or stacked vertically. All letters must be exactly the same font size and weight with uniform tracking (letter-spacing). The text should be uppercase, precisely centred both horizontally and vertically in the image (dead centre, equidistant from all four edges), and sized to fill 60-70% of the image width while remaining on one line. Use heavy/black font weight for maximum impact. Text colour should be bright white (#ffffff) with a strong luminous glow effect radiating outward (as if the text itself is a light source). The text must have a solid black (#000000) outline/stroke around each letter (2-3px weight) to sharply separate it from the background and glow effects, ensuring crisp legibility. Add a subtle outer glow in the topic's accent colour for extra depth and visual punch. The text should be the dominant focal point — the visual metaphor imagery should be secondary, sitting behind or subtly around the text, never competing with it. The text must feel powerful, premium, and click-worthy — like a title card for a high-budget documentary series. CRITICAL: The text must be on ONE single line, perfectly centred in the exact middle of the image, with all characters at uniform size
-- **No numbers, labels, watermarks, or text other than the topic title**
+- **Design philosophy**: Ultra-minimal, moody, abstract. No text whatsoever. The image is purely atmospheric — translucent geometric forms floating in a dark void with subtle light interactions. The look is cinematic and refined, like concept art for a premium fintech brand.
+- **Background**: Deep, dark gradient filling the entire canvas. The base tone is always dark — deep navy, near-black blue, or dark charcoal. Choose ONE dark palette per topic:
+  - Warm dark: deep navy (#0a0e1a) to dark indigo (#151530) with warm amber (#c88030) and gold (#d4a040) light accents — for debt, real estate, commodities, value investing
+  - Cool dark: midnight blue (#080c18) to dark slate (#101828) with cool cyan (#40a0c0) and ice blue (#70b8d8) light accents — for tech, fintech, equities, AI
+  - Neutral dark: charcoal (#0c0c10) to deep graphite (#181820) with soft warm white (#d0c8b8) and muted silver (#a0a0a8) light accents — for macro, regulation, diversification, bonds
+  - Rich dark: dark plum (#100818) to deep midnight (#0c1020) with magenta (#b060a0) and soft violet (#8070c0) light accents — for alternatives, venture capital, growth, emerging markets
+- **Geometric forms**: The hero element. Translucent, glass-like geometric shapes arranged in a visually striking composition. For EACH prompt, pick ONE geometry style from this list (vary across topics — never repeat the same style consecutively):
+  1. **Cascading panels** — 3-5 translucent rectangular panels arranged in a diagonal cascade, overlapping slightly, each catching light differently
+  2. **Floating prisms** — 2-3 large translucent triangular prisms or pyramids at different angles, with light refracting through them
+  3. **Concentric rings** — Thin translucent rings or arcs of varying radii, nested but offset from centre, some partial/cropped
+  4. **Stacked discs** — Thin translucent circular discs stacked at a slight angle, creating a layered depth effect
+  5. **Intersecting planes** — 2-4 large flat translucent planes intersecting at angles, creating sharp geometric intersections
+  6. **Suspended cubes** — 2-3 translucent cubes or rectangular volumes floating at different depths, slightly rotated
+  7. **Curved ribbons** — Flowing translucent ribbon-like strips curving through 3D space, elegant and minimal
+  8. **Hexagonal lattice** — A sparse arrangement of translucent hexagonal cells, some filled, some empty, at varying depths
+  - The geometric forms should:
+    - Appear translucent/glass-like with visible light passing through and subtle refraction
+    - Have soft edges with a slight frosted glass quality — not perfectly clear, not fully opaque
+    - Show subtle grid lines or wireframe texture on their surfaces (very faint, like graph paper)
+    - Be lit from one side, creating a gradient of warm-to-cool across the forms (warm light on one side, cool ambient on the other)
+    - Cast soft, diffused shadows onto the background
+    - Have a slight grain/noise texture over everything for a tactile, premium feel
+    - Be placed in the centre or slightly off-centre of the composition
+    - Float in space with a sense of depth and dimension
+- **Lighting**: Cinematic and dramatic. One primary light source casting warm tones (amber/gold) from one side, with cooler ambient fill from the opposite side. The light should interact with the translucent geometry — glowing through the forms, creating subtle caustics and light spill on the background. The overall mood is dark but not flat — rich with subtle light variation.
+- **Texture**: A fine film grain or subtle noise overlay across the entire image (like 35mm film grain). This adds a tactile, premium quality and prevents the image from looking too digitally clean.
+- **Absolutely NO text** — no titles, labels, watermarks, or any written characters of any kind
 - **No people, faces, hands, or human figures**
-- **No logos, brand marks, or UI elements**
-
-### Visual Metaphor Bank
-
-Draw from these kinds of imagery based on the topic:
-- **Debt/Credit**: Layered geometric planes, interlocking structures, bridges
-- **Equities/Stocks**: Ascending lines, prisms refracting light, crystalline structures
-- **Risk/Volatility**: Fractures, waves, turbulence patterns, storm imagery
-- **Growth/Returns**: Upward spirals, expanding circles, light rays
-- **Diversification**: Mosaic patterns, branching networks, scattered light
-- **Commodities**: Raw material textures (metal, grain, oil), earth tones
-- **Real Estate**: Architectural geometry, city silhouettes, foundations
-- **Technology/Fintech**: Circuit patterns, digital grids, data streams
-- **Global/Macro**: Globe outlines, interconnected nodes, map abstractions
-- **Regulation**: Structured grids, frameworks, boundaries
+- **No logos, brand marks, icons, or UI elements**
+- **No realistic objects** — purely abstract geometric forms
 
 ### Prompt Format
 
@@ -56,19 +60,22 @@ THUMBNAIL PROMPT
 Topic: [Topic Name]
 
 Prompt:
-[The full image generation prompt, 4-6 sentences. Must specify: medium/style, subject/focal element, composition/placement, background colour, lighting direction and quality, accent colours, texture treatment, and resolution. Be precise and deterministic — another person reading this prompt should produce a near-identical image.]
+[The full image generation prompt, 5-7 sentences. Must specify: dark background gradient colours, geometry style chosen (from the numbered list), number and arrangement of geometric forms, translucency and glass-like qualities, lighting direction and colour temperatures (warm vs cool sides), shadow treatment, grain/noise texture, and resolution. Be precise and deterministic — another person reading this prompt should produce a near-identical image.]
 
 Negative prompt:
-extra text, subtitles, numbers, labels, logos, watermarks, people, faces, hands, fingers, human figures, realistic photography, photorealistic, cartoon, anime, cluttered, busy, noisy, low quality, blurry, oversaturated, neon colours, harsh shadows, multiple light sources, borders, frames, UI elements, misspelled text, garbled letters, stacked text, multi-line text, text on two lines, uneven text sizes, off-centre text, misaligned text
+text, titles, labels, words, letters, numbers, watermarks, logos, people, faces, hands, fingers, human figures, realistic photography, photorealistic, cartoon, anime, cluttered, busy, noisy, low quality, blurry, bright background, white background, pastel colours, flat lighting, no shadows, icons, UI elements, borders, frames, realistic objects, illustrations, diagrams, charts, neon colours, oversaturated, multiple light sources, symmetrical composition
 ```
 
 ### Examples of Good Prompts
 
 **Private Debt:**
-"Editorial digital illustration with subtle 3D depth. The words 'PRIVATE DEBT' are rendered on a single horizontal line in a bold uppercase sans-serif typeface (heavy weight, uniform letter size throughout), placed at the exact dead centre of the image — equidistant from all four edges. The single-line text spans approximately 65% of the image width. The text is bright white (#ffffff) with a solid black (#000000) outline/stroke (2-3px) around each letter, a strong luminous glow radiating outward, and a soft warm amber (#c9963a) outer glow for depth. Behind the text, five translucent geometric planes intersect at shallow angles in a staggered arrangement, with faint internal grid lines and frosted-glass translucency, suggesting structured obligations. Deep navy background (#0a1628) with a soft radial gradient lighter at centre behind the text. Primary warm amber light source from upper-left at 45 degrees filtering through the background planes. Secondary subtle teal (#4a8a9e) rim light on plane edges. Fine film grain overlay at 5% opacity. 1536×864 pixels, 16:9 aspect ratio."
+"Ultra-minimal abstract thumbnail. Deep dark gradient background from navy (#0a0e1a) to dark indigo (#151530). In the centre-right of the composition, 4 translucent glass-like rectangular panels are arranged in a diagonal cascade from lower-left to upper-right, each overlapping slightly. The panels have a frosted glass translucency with very faint grid-line textures on their surfaces. A warm amber-gold light (#c88030) illuminates from the left side, glowing through the leftmost panels and creating warm highlights, while the rightmost panels pick up a cooler blue-cyan ambient tone (#40a0c0). The panels cast soft diffused shadows onto the dark background below them. Subtle caustic light spills onto the background around the panels. A fine 35mm film grain texture overlays the entire image for a tactile, premium feel. No text. 1536×864 pixels, 16:9 aspect ratio."
 
 **Venture Capital:**
-"Editorial digital illustration with subtle 3D depth. The words 'VENTURE CAPITAL' are rendered on a single horizontal line in a bold uppercase sans-serif typeface (extra-bold weight, uniform letter size throughout), placed at the exact dead centre of the image — equidistant from all four edges. The single-line text spans approximately 65% of the image width. The text is bright white (#ffffff) with a solid black (#000000) outline/stroke (2-3px) around each letter, a strong luminous glow, and a soft electric blue (#3d7ce0) outer glow creating a halo effect. Behind and beneath the text, a luminous seed-shaped form sits at lower-centre with six branching light trails expanding upward and outward, framing the text from below. Deep charcoal background (#1a1a2e) with a faint radial gradient lighter behind the text. Primary electric blue glow emanating from the seed, transitioning to soft white at the trail tips. Lighting from upper-left at 45 degrees with diffused cinematic quality. Fine film grain at 5% opacity. 1536×864 pixels, 16:9 aspect ratio."
+"Ultra-minimal abstract thumbnail. Deep dark gradient background from dark plum (#100818) to midnight (#0c1020). Two large translucent triangular prisms float in the centre of the composition, angled toward each other at different rotations, with glass-like surfaces showing faint wireframe grid lines. A rich magenta-violet light (#b060a0) illuminates from the upper-left, refracting through the prisms and casting soft violet caustics onto the dark background. The opposite faces pick up a cooler muted silver tone. The prisms have a frosted translucency — not fully clear, with soft feathered edges. Diffused shadows fall beneath them, grounding them in the space. Fine film grain noise across the entire image. No text. 1536×864 pixels, 16:9 aspect ratio."
+
+**Inference Tokenomics:**
+"Ultra-minimal abstract thumbnail. Deep dark gradient background from midnight blue (#080c18) to dark slate (#101828). A sparse arrangement of translucent hexagonal cells floats in the centre of the composition — some filled with frosted glass, some empty outlines, at varying depths creating parallax. A cool cyan light (#40a0c0) illuminates from the right side, passing through the hexagonal forms and creating ice-blue highlights and subtle refraction. The left-facing surfaces pick up a warmer muted amber tone (#c8a060). Faint grid-line textures are visible on the hexagonal surfaces. Soft shadows are cast between the layered hexagons. A fine 35mm film grain overlays the entire image. No text. 1536×864 pixels, 16:9 aspect ratio."
 
 ## Output
 
