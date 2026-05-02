@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Principles Thinking — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337582">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container wiki-container">
+    <div class="wiki-breadcrumb">
+      <a href="/">Home</a> &middot; <a href="/wiki/">Wiki</a> &middot; <a href="/wiki/business-analysis/">Business Analysis</a>
+    </div>
+
+    <div class="wiki-layout">
+      <details class="wiki-sidebar-details" open>
+      <summary class="wiki-sidebar-summary">Browse Wiki</summary>
+      <nav class="wiki-sidebar" aria-label="Wiki navigation">
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/philosophy/">Core Philosophy</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/compounding.html">Compounding</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/equity-risk-premium.html">Equity Risk Premium</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/time-horizon.html">Time Horizon</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/long-term-mindset.html">Long-Term Mindset</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/handling-volatility.html">Handling Volatility</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/investment-approach/">Investment Approach</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/value-investing.html">Value Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/quality-investing.html">Quality Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/price-vs-quality.html">Price vs Quality</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/graham-to-buffett.html">Graham to Buffett</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label wiki-sidebar-cat-label-current" href="/wiki/business-analysis/">Business Analysis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/consumers-edge.html">The Consumer's Edge</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/supply-chain-following.html">Supply Chain Following</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/alignment-of-interests.html">Alignment of Interests</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/platform-effects.html">Platform Effects</a></li>
+          <li><a class="wiki-sidebar-link wiki-sidebar-link-active" href="/wiki/business-analysis/first-principles.html">First Principles Thinking</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/research-process/">Research Process</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/source-hierarchy.html">Source Hierarchy</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/earnings-call-analysis.html">Earnings Call Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/financial-metrics.html">Financial Metrics</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/dcf-models.html">DCF Models</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/ai-research-tools.html">AI Research Tools</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/trust-and-verify.html">Trust and Verify</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/ai-thesis/">AI Thesis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-stack-framework.html">AI Stack Framework</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/chips-layer.html">Chips Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/infrastructure-layer.html">Infrastructure Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/models-layer.html">Models Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/applications-layer.html">Applications Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/jevons-paradox.html">Jevons Paradox</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-agents.html">AI Agents</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/inference-scaling.html">Inference Scaling</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/portfolio-management/">Portfolio Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/dollar-cost-averaging.html">Dollar Cost Averaging</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/core-vs-exploratory.html">Core vs Exploratory</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/position-graduation.html">Position Graduation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/never-trim-winners.html">Never Trim Winners</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/crash-buying-vs-dca.html">Crash Buying vs DCA</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/selling/">Selling</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/thesis-based-selling.html">Thesis-Based Selling</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/durable-sell-triggers.html">Durable Sell Triggers</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/timing-bias.html">Timing Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/sunk-cost-fallacy.html">Sunk Cost Fallacy</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/holding-through-volatility/">Holding Through Volatility</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/safety-nets.html">Safety Nets</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/leverage-elimination.html">Leverage Elimination</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/conviction-testing.html">Conviction Testing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/drawdown-endurance.html">Drawdown Endurance</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/diversification/">Diversification</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/index-investing.html">Index Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/home-country-bias.html">Home Country Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/market-cap-weighting.html">Market-Cap Weighting</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/single-country-risk.html">Single-Country Risk</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/singapore/">Singapore</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/tax-advantages.html">Tax Advantages</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/us-estate-tax.html">US Estate Tax</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/ucits-etfs.html">UCITS ETFs</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/cpf-optimization.html">CPF Optimisation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/srs.html">SRS</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/three-layer-retirement.html">Three-Layer Retirement</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/lifestyle-traps.html">Lifestyle Traps</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/analytical-skills/">Analytical Skills</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/stock-based-compensation.html">Stock-Based Compensation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/dividend-analysis.html">Dividend Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/concentration-risk.html">Concentration Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/sector-focus.html">Sector Focus</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/risk-management/">Risk Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/volatility-as-feature.html">Volatility as Feature</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/margin-avoidance.html">Margin Avoidance</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/tail-risk.html">Tail Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/crisis-vs-noise.html">Crisis vs Noise</a></li>
+        </ul>
+      </div>
+      </nav>
+    </details>
+      <article class="wiki-article transcript-article">
+        <h1 class="wiki-article-title">First Principles Thinking</h1>
+        <p class="wiki-description">Decomposing problems down to basic physical and economic constraints, then reasoning upward to find solutions others miss.</p>
+        <h3 class="article-h2" id="reasoning-from-the-ground-up">Reasoning From the Ground Up</h3>
+      <p>First principles thinking means decomposing a problem down to its basic physical and economic constraints, then reasoning upward without relying on analogy or convention. Instead of asking &quot;how is this normally done?&quot;, the question becomes &quot;what does physics allow and what does economics require?&quot;</p>
+      <h3 class="article-h2" id="tesla-battery-packs">Tesla: Battery Packs</h3>
+      <p>When told that battery packs would always be expensive, Tesla calculated the raw material cost of the component elements — cobalt, nickel, lithium, carbon, and the separators. The total material cost was dramatically lower than the market price of a battery pack.</p>
+      <p>The gap between input cost and market price was convention and margin, not physics.</p>
+      <p>When an industry claims something is inherently expensive, calculate the raw input cost. If there is a large gap between inputs and final price, that gap represents opportunity — it is composed of convention, inefficiency, and margin that can be challenged.</p>
+      <p>This insight drove Tesla&#39;s investment in battery manufacturing and ultimately the Gigafactory strategy. The conclusion was not that batteries were cheap — but that they were not <em>inherently</em> as expensive as the industry accepted.</p>
+      <h3 class="article-h2" id="the-gigapress-rethinking-manufacturing">The Gigapress: Rethinking Manufacturing</h3>
+      <p>The Gigapress die-casts large chassis sections as single pieces instead of assembling hundreds of stamped and welded components. This came from the same first principles reasoning:</p>
+      <ul class="article-list">
+      <li><strong>Convention said:</strong> car bodies are assembled from many small parts because that is how it has always been done</li>
+      <li><strong>Physics said:</strong> a sufficiently large casting machine could produce the same structure as a single piece</li>
+      <li><strong>Economics said:</strong> eliminating hundreds of parts, robots, and assembly steps would reduce cost and complexity</li>
+      </ul>
+      <p>These are not optimizations within the existing playbook — they are fundamental rethinking of the playbook itself. The distinction matters because optimization yields incremental gains while rethinking yields structural advantages.</p>
+      <h3 class="article-h2" id="why-it-matters-for-investors">Why It Matters for Investors</h3>
+      <p>A company that reasons from first principles will find solutions others cannot, because others are not even asking the right questions. They are constrained by &quot;how things are done&quot; while the first principles thinker is constrained only by what is physically and economically possible.</p>
+      <p>This has direct implications for evaluating competitive advantages:</p>
+      <ul class="article-list">
+      <li><strong><a href="/wiki/business-analysis/vertical-integration.html">Vertical integration</a></strong> decisions often originate from first principles analysis — if the physics support doing it in-house, why accept the margin and coordination cost of outsourcing?</li>
+      <li><strong><a href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a></strong> can be assessed more clearly when you understand whether a barrier is fundamental (physics) or conventional (industry practice)</li>
+      <li><strong>Pricing analysis</strong> becomes sharper when you can distinguish between costs that are structurally necessary and costs that are inherited from convention</li>
+      </ul>
+      <h3 class="article-h2" id="applying-first-principles-thinking">Applying First Principles Thinking</h3>
+      <p>The method follows a consistent pattern:</p>
+      <ol class="article-list-ol">
+      <li><strong>Identify the assumption</strong> — what does the industry take as given?</li>
+      <li><strong>Decompose to fundamentals</strong> — what do physics and economics actually require?</li>
+      <li><strong>Find the gap</strong> — where does convention exceed fundamental constraints?</li>
+      <li><strong>Reason upward</strong> — what becomes possible if you eliminate the conventional layer?</li>
+      </ol>
+      <p>Not every gap is exploitable, and not every convention is wrong. But a company that consistently finds and exploits these gaps has a thinking advantage that compounds over time.</p>
+      <h3 class="article-h2" id="related">Related</h3>
+      <ul class="article-list">
+      <li><a href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a> — first principles reasoning often drives the decision to integrate rather than outsource</li>
+      <li><a href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a> — understanding whether barriers are physics or convention helps assess durability</li>
+      <li><a href="/wiki/business-analysis/supply-chain-following.html">Supply Chain Following</a> — first principles analysis at each supply chain node reveals where value is created versus where it is merely captured</li>
+      </ul>
+        <div class="wiki-prev-next">
+          <a class="wiki-prev-next-link wiki-prev" href="/wiki/business-analysis/platform-effects.html"><span class="wiki-prev-next-dir">&larr; Previous</span><span class="wiki-prev-next-title">Platform Effects</span></a>
+          <span></span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

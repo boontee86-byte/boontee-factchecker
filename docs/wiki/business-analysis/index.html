@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Analysis — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337578">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Business Analysis</div>
+      <h1>Business Analysis</h1>
+      <p class="wiki-category-description">How to evaluate business models: the consumer's edge, supply chains, moats, and first principles thinking.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/consumers-edge.html">
+        <div class="wiki-article-list-title">The Consumer's Edge</div>
+        <div class="wiki-article-list-desc">Using personal experience as a customer as a research input for evaluating business quality.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/supply-chain-following.html">
+        <div class="wiki-article-list-title">Supply Chain Following</div>
+        <div class="wiki-article-list-desc">Tracing products back through their supply chains to find related quality businesses worth evaluating.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/alignment-of-interests.html">
+        <div class="wiki-article-list-title">Alignment of Interests</div>
+        <div class="wiki-article-list-desc">When a company's business model structurally prevents conflicts with its customers, creating durable trust.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/irreplaceability.html">
+        <div class="wiki-article-list-title">Irreplaceability</div>
+        <div class="wiki-article-list-desc">When a company is genuinely the only one that can do what it does, creating the deepest form of competitive advantage.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/vertical-integration.html">
+        <div class="wiki-article-list-title">Vertical Integration</div>
+        <div class="wiki-article-list-desc">Controlling multiple layers of the value chain to achieve optimization and resilience that outsourced competitors cannot match.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/platform-effects.html">
+        <div class="wiki-article-list-title">Platform Effects</div>
+        <div class="wiki-article-list-desc">Self-reinforcing cycles that make ecosystems nearly impossible to displace once established.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/business-analysis/first-principles.html">
+        <div class="wiki-article-list-title">First Principles Thinking</div>
+        <div class="wiki-article-list-desc">Decomposing problems down to basic physical and economic constraints, then reasoning upward to find solutions others miss.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

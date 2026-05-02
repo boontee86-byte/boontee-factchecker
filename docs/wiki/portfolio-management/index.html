@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Management — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337578">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Portfolio Management</div>
+      <h1>Portfolio Management</h1>
+      <p class="wiki-category-description">Dollar cost averaging, core vs exploratory positions, position graduation, and letting winners run.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/portfolio-management/dollar-cost-averaging.html">
+        <div class="wiki-article-list-title">Dollar Cost Averaging</div>
+        <div class="wiki-article-list-desc">Deploy capital at regular intervals regardless of market conditions to eliminate timing error and build positions systematically.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/portfolio-management/core-vs-exploratory.html">
+        <div class="wiki-article-list-title">Core vs Exploratory</div>
+        <div class="wiki-article-list-desc">A two-tier portfolio structure that maps conviction at different stages of development, from small exploratory stakes to high-conviction core holdings.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/portfolio-management/position-graduation.html">
+        <div class="wiki-article-list-title">Position Graduation</div>
+        <div class="wiki-article-list-desc">How positions earn their way from exploratory to core status through accumulated evidence, multiple earnings cycles, and surviving real volatility.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/portfolio-management/never-trim-winners.html">
+        <div class="wiki-article-list-title">Never Trim Winners</div>
+        <div class="wiki-article-list-desc">Why trimming a compounding winner to restore comfortable allocation is a bet against your best ideas, not prudent risk management.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/portfolio-management/crash-buying-vs-dca.html">
+        <div class="wiki-article-list-title">Crash Buying vs DCA</div>
+        <div class="wiki-article-list-desc">Why holding cash for market crashes is a form of market timing that consistently underperforms disciplined dollar cost averaging.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

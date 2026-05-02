@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investing Wiki — BoonTee Insights</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337577">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/" class="back-link">&larr; Back to home</a>
+    <div class="wiki-landing-header">
+      <h1>Investing Wiki</h1>
+      <p class="wiki-landing-tagline">Concepts, frameworks, and principles for building long-term wealth through equity investing.</p>
+    </div>
+    <div class="wiki-grid">
+
+      <a class="wiki-cat-card" href="/wiki/philosophy/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Core Philosophy</div>
+          <div class="wiki-cat-card-description">Compounding, equity risk premium, time horizons, and the long-term mindset that underpins everything.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/investment-approach/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Investment Approach</div>
+          <div class="wiki-cat-card-description">The evolution from value investing to quality investing, and why asking &quot;is this good?&quot; beats &quot;is this cheap?&quot;</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/business-analysis/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Business Analysis</div>
+          <div class="wiki-cat-card-description">How to evaluate business models: the consumer's edge, supply chains, moats, and first principles thinking.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/research-process/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Research Process</div>
+          <div class="wiki-cat-card-description">Source hierarchy, earnings call analysis, financial metrics, and using AI tools for research.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/ai-thesis/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">AI Thesis</div>
+          <div class="wiki-cat-card-description">The five-layer AI stack, Jevons paradox, AI agents, and why inference scaling matters.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/portfolio-management/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Portfolio Management</div>
+          <div class="wiki-cat-card-description">Dollar cost averaging, core vs exploratory positions, position graduation, and letting winners run.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/selling/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Selling</div>
+          <div class="wiki-cat-card-description">Thesis-based selling, durable sell triggers, timing bias, and navigating sunk cost fallacy.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/holding-through-volatility/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Holding Through Volatility</div>
+          <div class="wiki-cat-card-description">Safety nets, leverage elimination, conviction testing, and building drawdown endurance.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/diversification/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Diversification</div>
+          <div class="wiki-cat-card-description">Index investing, home country bias, market-cap weighting, and the cost of going too narrow.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/singapore/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Singapore</div>
+          <div class="wiki-cat-card-description">Tax advantages, UCITS ETFs, CPF optimisation, SRS, and avoiding lifestyle traps.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/analytical-skills/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Analytical Skills</div>
+          <div class="wiki-cat-card-description">Stock-based compensation, dividend analysis, concentration risk, and knowing your sector scope.</div>
+        </div>
+      </a>
+
+      <a class="wiki-cat-card" href="/wiki/risk-management/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">Risk Management</div>
+          <div class="wiki-cat-card-description">Volatility as a feature, margin avoidance, tail risk, and distinguishing crisis from noise.</div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Horizon as Analytical Constraint — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337580">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container wiki-container">
+    <div class="wiki-breadcrumb">
+      <a href="/">Home</a> &middot; <a href="/wiki/">Wiki</a> &middot; <a href="/wiki/philosophy/">Core Philosophy</a>
+    </div>
+
+    <div class="wiki-layout">
+      <details class="wiki-sidebar-details" open>
+      <summary class="wiki-sidebar-summary">Browse Wiki</summary>
+      <nav class="wiki-sidebar" aria-label="Wiki navigation">
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label wiki-sidebar-cat-label-current" href="/wiki/philosophy/">Core Philosophy</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/compounding.html">Compounding</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/equity-risk-premium.html">Equity Risk Premium</a></li>
+          <li><a class="wiki-sidebar-link wiki-sidebar-link-active" href="/wiki/philosophy/time-horizon.html">Time Horizon</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/long-term-mindset.html">Long-Term Mindset</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/handling-volatility.html">Handling Volatility</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/investment-approach/">Investment Approach</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/value-investing.html">Value Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/quality-investing.html">Quality Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/price-vs-quality.html">Price vs Quality</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/graham-to-buffett.html">Graham to Buffett</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/business-analysis/">Business Analysis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/consumers-edge.html">The Consumer's Edge</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/supply-chain-following.html">Supply Chain Following</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/alignment-of-interests.html">Alignment of Interests</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/platform-effects.html">Platform Effects</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/first-principles.html">First Principles Thinking</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/research-process/">Research Process</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/source-hierarchy.html">Source Hierarchy</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/earnings-call-analysis.html">Earnings Call Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/financial-metrics.html">Financial Metrics</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/dcf-models.html">DCF Models</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/ai-research-tools.html">AI Research Tools</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/trust-and-verify.html">Trust and Verify</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/ai-thesis/">AI Thesis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-stack-framework.html">AI Stack Framework</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/chips-layer.html">Chips Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/infrastructure-layer.html">Infrastructure Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/models-layer.html">Models Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/applications-layer.html">Applications Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/jevons-paradox.html">Jevons Paradox</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-agents.html">AI Agents</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/inference-scaling.html">Inference Scaling</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/portfolio-management/">Portfolio Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/dollar-cost-averaging.html">Dollar Cost Averaging</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/core-vs-exploratory.html">Core vs Exploratory</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/position-graduation.html">Position Graduation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/never-trim-winners.html">Never Trim Winners</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/crash-buying-vs-dca.html">Crash Buying vs DCA</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/selling/">Selling</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/thesis-based-selling.html">Thesis-Based Selling</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/durable-sell-triggers.html">Durable Sell Triggers</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/timing-bias.html">Timing Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/sunk-cost-fallacy.html">Sunk Cost Fallacy</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/holding-through-volatility/">Holding Through Volatility</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/safety-nets.html">Safety Nets</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/leverage-elimination.html">Leverage Elimination</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/conviction-testing.html">Conviction Testing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/drawdown-endurance.html">Drawdown Endurance</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/diversification/">Diversification</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/index-investing.html">Index Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/home-country-bias.html">Home Country Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/market-cap-weighting.html">Market-Cap Weighting</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/single-country-risk.html">Single-Country Risk</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/singapore/">Singapore</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/tax-advantages.html">Tax Advantages</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/us-estate-tax.html">US Estate Tax</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/ucits-etfs.html">UCITS ETFs</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/cpf-optimization.html">CPF Optimisation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/srs.html">SRS</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/three-layer-retirement.html">Three-Layer Retirement</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/lifestyle-traps.html">Lifestyle Traps</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/analytical-skills/">Analytical Skills</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/stock-based-compensation.html">Stock-Based Compensation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/dividend-analysis.html">Dividend Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/concentration-risk.html">Concentration Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/sector-focus.html">Sector Focus</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/risk-management/">Risk Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/volatility-as-feature.html">Volatility as Feature</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/margin-avoidance.html">Margin Avoidance</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/tail-risk.html">Tail Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/crisis-vs-noise.html">Crisis vs Noise</a></li>
+        </ul>
+      </div>
+      </nav>
+    </details>
+      <article class="wiki-article transcript-article">
+        <h1 class="wiki-article-title">Time Horizon as Analytical Constraint</h1>
+        <p class="wiki-description">How the timeframe you choose determines the tools that matter — and why most investors misjudge their own horizon until a drawdown tests it.</p>
+        <p>Time horizon is not a preference — it is an analytical constraint. The timeframe you operate within determines which information matters, which tools are appropriate, and which risks are real. Using the wrong toolkit for your horizon is one of the most common and costly mistakes in investing.</p>
+      <h3 class="article-h2" id="three-distinct-timeframes">Three Distinct Timeframes</h3>
+      <h4 class="article-h3" id="short-term-days-to-weeks">Short-Term (Days to Weeks)</h4>
+      <p>The relevant toolkit includes technical analysis, chart patterns, sentiment indicators, and order flow. Price action dominates. Fundamentals are nearly irrelevant at this scale because they do not change day to day. The edge, if any exists, comes from reading the behaviour of other market participants.</p>
+      <h4 class="article-h3" id="medium-term-months-to-quarters">Medium-Term (Months to Quarters)</h4>
+      <p>Catalysts drive returns at this scale: earnings releases, macro shifts, regulatory changes, product launches. The toolkit expands to include fundamental analysis, but focused on near-term changes rather than durable characteristics. Analysts&#39; estimates and revisions matter. Positioning and expectations matter.</p>
+      <h4 class="article-h3" id="long-term-5-to-20-years">Long-Term (5 to 20+ Years)</h4>
+      <p>The relevant toolkit is entirely different. What matters is:</p>
+      <ul class="article-list">
+      <li><strong>Business model stability</strong> — will the way this company makes money still work in a decade?</li>
+      <li><strong>Competitive moats</strong> — are the barriers to competition durable or eroding?</li>
+      <li><strong>Management philosophy</strong> — does leadership think in years or quarters?</li>
+      <li><strong>Culture</strong> — is the organisation built to adapt and endure?</li>
+      </ul>
+      <p>Culture, moats, and business model logic are stable across economic cycles in ways that quarterly earnings, margins, and revenue growth rates are not. A company&#39;s Q3 earnings miss tells you almost nothing about its position in 2036. Its competitive structure and organisational culture tell you a great deal.</p>
+      <p><img class="article-img" src="/illustrations/time-horizon-toolkit.png" alt="Different horizons require different evidence — short-term investors read price action, medium-term investors track catalysts, and long-term investors study roots: moats, culture, and business model durability." loading="lazy"></p>
+      <h3 class="article-h2" id="the-honest-difficulty">The Honest Difficulty</h3>
+      <p>Most investors claim a long-term horizon. Very few actually have one. The test is not what you say during a bull market — it is what you do during a 30% drawdown.</p>
+      <p>Your actual time horizon is revealed during drawdowns, not during calm markets. If a 20% decline causes you to sell, your horizon was never long-term regardless of what you told yourself. Knowing your real horizon — and being honest about it — is a prerequisite for choosing the right analytical framework.</p>
+      <p>The structural problem is that long-term investing requires ignoring most of the information the financial industry produces. Quarterly earnings, daily price movements, analyst upgrades and downgrades — almost none of this matters on a 10-year horizon. But it is loud, constant, and designed to provoke action. The long-term investor must build a filter that excludes most of what the market considers important.</p>
+      <h3 class="article-h2" id="matching-horizon-to-method">Matching Horizon to Method</h3>
+      <p>Mismatched horizons and methods destroy returns. Common errors include:</p>
+      <ul class="article-list">
+      <li>Using technical analysis to make long-term allocation decisions</li>
+      <li>Using long-term fundamental analysis to time short-term trades</li>
+      <li>Buying a stock for its decade-long potential, then selling it after a bad quarter</li>
+      <li>Claiming to be a long-term investor while checking portfolio value daily</li>
+      </ul>
+      <p>The discipline is not just choosing a horizon — it is committing to the toolkit that matches it, and ignoring everything else.</p>
+      <hr class="article-hr">
+      <h3 class="article-h2" id="related">Related</h3>
+      <ul class="article-list">
+      <li><a href="/wiki/philosophy/long-term-mindset.html">The Long-Term Mindset</a> — the psychological discipline required to operate on a long horizon</li>
+      <li><a href="/wiki/investment-approach/quality-investing.html">Quality Investing</a> — the approach built for the long-term timeframe</li>
+      <li><a href="/wiki/philosophy/compounding.html">The Power of Compounding</a> — why long horizons unlock exponential growth</li>
+      </ul>
+        <div class="wiki-prev-next">
+          <a class="wiki-prev-next-link wiki-prev" href="/wiki/philosophy/equity-risk-premium.html"><span class="wiki-prev-next-dir">&larr; Previous</span><span class="wiki-prev-next-title">Equity Risk Premium</span></a>
+          <a class="wiki-prev-next-link wiki-next" href="/wiki/philosophy/long-term-mindset.html"><span class="wiki-prev-next-dir">Next &rarr;</span><span class="wiki-prev-next-title">Long-Term Mindset</span></a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

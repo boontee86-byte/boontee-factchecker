@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform Effects — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337582">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container wiki-container">
+    <div class="wiki-breadcrumb">
+      <a href="/">Home</a> &middot; <a href="/wiki/">Wiki</a> &middot; <a href="/wiki/business-analysis/">Business Analysis</a>
+    </div>
+
+    <div class="wiki-layout">
+      <details class="wiki-sidebar-details" open>
+      <summary class="wiki-sidebar-summary">Browse Wiki</summary>
+      <nav class="wiki-sidebar" aria-label="Wiki navigation">
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/philosophy/">Core Philosophy</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/compounding.html">Compounding</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/equity-risk-premium.html">Equity Risk Premium</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/time-horizon.html">Time Horizon</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/long-term-mindset.html">Long-Term Mindset</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/handling-volatility.html">Handling Volatility</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/investment-approach/">Investment Approach</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/value-investing.html">Value Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/quality-investing.html">Quality Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/price-vs-quality.html">Price vs Quality</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/graham-to-buffett.html">Graham to Buffett</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label wiki-sidebar-cat-label-current" href="/wiki/business-analysis/">Business Analysis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/consumers-edge.html">The Consumer's Edge</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/supply-chain-following.html">Supply Chain Following</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/alignment-of-interests.html">Alignment of Interests</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a></li>
+          <li><a class="wiki-sidebar-link wiki-sidebar-link-active" href="/wiki/business-analysis/platform-effects.html">Platform Effects</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/first-principles.html">First Principles Thinking</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/research-process/">Research Process</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/source-hierarchy.html">Source Hierarchy</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/earnings-call-analysis.html">Earnings Call Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/financial-metrics.html">Financial Metrics</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/dcf-models.html">DCF Models</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/ai-research-tools.html">AI Research Tools</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/trust-and-verify.html">Trust and Verify</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/ai-thesis/">AI Thesis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-stack-framework.html">AI Stack Framework</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/chips-layer.html">Chips Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/infrastructure-layer.html">Infrastructure Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/models-layer.html">Models Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/applications-layer.html">Applications Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/jevons-paradox.html">Jevons Paradox</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-agents.html">AI Agents</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/inference-scaling.html">Inference Scaling</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/portfolio-management/">Portfolio Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/dollar-cost-averaging.html">Dollar Cost Averaging</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/core-vs-exploratory.html">Core vs Exploratory</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/position-graduation.html">Position Graduation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/never-trim-winners.html">Never Trim Winners</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/crash-buying-vs-dca.html">Crash Buying vs DCA</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/selling/">Selling</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/thesis-based-selling.html">Thesis-Based Selling</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/durable-sell-triggers.html">Durable Sell Triggers</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/timing-bias.html">Timing Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/sunk-cost-fallacy.html">Sunk Cost Fallacy</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/holding-through-volatility/">Holding Through Volatility</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/safety-nets.html">Safety Nets</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/leverage-elimination.html">Leverage Elimination</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/conviction-testing.html">Conviction Testing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/drawdown-endurance.html">Drawdown Endurance</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/diversification/">Diversification</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/index-investing.html">Index Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/home-country-bias.html">Home Country Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/market-cap-weighting.html">Market-Cap Weighting</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/single-country-risk.html">Single-Country Risk</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/singapore/">Singapore</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/tax-advantages.html">Tax Advantages</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/us-estate-tax.html">US Estate Tax</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/ucits-etfs.html">UCITS ETFs</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/cpf-optimization.html">CPF Optimisation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/srs.html">SRS</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/three-layer-retirement.html">Three-Layer Retirement</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/lifestyle-traps.html">Lifestyle Traps</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/analytical-skills/">Analytical Skills</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/stock-based-compensation.html">Stock-Based Compensation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/dividend-analysis.html">Dividend Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/concentration-risk.html">Concentration Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/sector-focus.html">Sector Focus</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/risk-management/">Risk Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/volatility-as-feature.html">Volatility as Feature</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/margin-avoidance.html">Margin Avoidance</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/tail-risk.html">Tail Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/crisis-vs-noise.html">Crisis vs Noise</a></li>
+        </ul>
+      </div>
+      </nav>
+    </details>
+      <article class="wiki-article transcript-article">
+        <h1 class="wiki-article-title">Platform Effects</h1>
+        <p class="wiki-description">Self-reinforcing cycles that make ecosystems nearly impossible to displace once established.</p>
+        <h3 class="article-h2" id="the-flywheel">The Flywheel</h3>
+      <p>Platform effects are self-reinforcing cycles where each new participant makes the platform more valuable for everyone else. Once these cycles reach critical mass, they become nearly impossible to displace — a new competitor must somehow be better at every point in the cycle simultaneously.</p>
+      <h3 class="article-h2" id="microsoft-the-developer-ecosystem">Microsoft: The Developer Ecosystem</h3>
+      <p><strong>More users → more developers → more software → more users.</strong></p>
+      <p>This cycle has sustained Microsoft&#39;s operating system dominance for decades. The sheer volume of software written for Windows creates a switching cost that no alternative OS has overcome in the desktop market, regardless of technical merit.</p>
+      <p>Microsoft&#39;s OS ecosystem lock-in has persisted through multiple technology transitions — from desktop to laptop, from HDD to SSD, from on-premise to hybrid cloud. The platform adapts while the cycle continues.</p>
+      <h3 class="article-h2" id="google-owning-the-moment-of-intent">Google: Owning the Moment of Intent</h3>
+      <p>Google owns the moment of user intent through search. When someone types a query, they are declaring what they want — and that signal is enormously valuable for advertising.</p>
+      <p>The data advantage compounds: <strong>billions of searches</strong> generate data that improves results, which attracts more users, which generates more data. A competitor with less scale cannot replicate the quality of results because they lack the volume of behavioral data that drives improvement.</p>
+      <p>Google&#39;s moat is not just about attention (time spent) — it is about intent (what users actively want). The signal of intent is far more valuable for advertising than passive attention, which is why search advertising commands premium pricing.</p>
+      <h3 class="article-h2" id="amazon-three-invariants">Amazon: Three Invariants</h3>
+      <p>Amazon&#39;s platform strategy is built around three things no customer will ever want less of:</p>
+      <ol class="article-list-ol">
+      <li><strong>Lower prices</strong></li>
+      <li><strong>Faster delivery</strong></li>
+      <li><strong>Wider selection</strong></li>
+      </ol>
+      <p>By anchoring the business to these invariants, Amazon ensures that every investment compounds permanently. The fulfillment network that enables faster delivery also enables wider selection (more sellers join because of the logistics) and lower prices (scale reduces per-unit cost).</p>
+      <p>This is a triple flywheel where each element reinforces the others, making the platform increasingly difficult to compete with on any single dimension.</p>
+      <h3 class="article-h2" id="recognizing-platform-effects">Recognizing Platform Effects</h3>
+      <p>Questions to evaluate whether a company benefits from genuine platform effects:</p>
+      <ul class="article-list">
+      <li><strong>Does each new user make the platform more valuable for existing users?</strong> If growth is purely additive rather than multiplicative, it is scale — not a platform effect.</li>
+      <li><strong>Would a competitor need to replicate the entire cycle at once?</strong> If a competitor can win on a single dimension, the platform effect is weak.</li>
+      <li><strong>Has the cycle persisted through industry changes?</strong> Durable platform effects survive technology transitions.</li>
+      </ul>
+      <h3 class="article-h2" id="related">Related</h3>
+      <ul class="article-list">
+      <li><a href="/wiki/business-analysis/consumers-edge.html">The Consumer&#39;s Edge</a> — platform effects are often felt directly as a customer through ecosystem lock-in</li>
+      <li><a href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a> — some platforms strengthen their effects by integrating vertically</li>
+      <li><a href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a> — platform effects can create a form of irreplaceability at the ecosystem level</li>
+      </ul>
+        <div class="wiki-prev-next">
+          <a class="wiki-prev-next-link wiki-prev" href="/wiki/business-analysis/vertical-integration.html"><span class="wiki-prev-next-dir">&larr; Previous</span><span class="wiki-prev-next-title">Vertical Integration</span></a>
+          <a class="wiki-prev-next-link wiki-next" href="/wiki/business-analysis/first-principles.html"><span class="wiki-prev-next-dir">Next &rarr;</span><span class="wiki-prev-next-title">First Principles Thinking</span></a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

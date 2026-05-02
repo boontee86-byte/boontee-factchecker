@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holding Through Volatility — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337579">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Holding Through Volatility</div>
+      <h1>Holding Through Volatility</h1>
+      <p class="wiki-category-description">Safety nets, leverage elimination, conviction testing, and building drawdown endurance.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/holding-through-volatility/safety-nets.html">
+        <div class="wiki-article-list-title">Safety Nets</div>
+        <div class="wiki-article-list-desc">Financial architecture that doesn't depend on portfolio performance, enabling you to hold through volatility without existential risk.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/holding-through-volatility/leverage-elimination.html">
+        <div class="wiki-article-list-title">Leverage Elimination</div>
+        <div class="wiki-article-list-desc">Why leverage converts temporary drawdowns into permanent losses and why eliminating it is a prerequisite for holding through volatility.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/holding-through-volatility/conviction-testing.html">
+        <div class="wiki-article-list-title">Conviction Testing</div>
+        <div class="wiki-article-list-desc">Why actual holding behaviour under stress is the only reliable measure of investment capability, and how different types of drawdowns test conviction differently.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/holding-through-volatility/drawdown-endurance.html">
+        <div class="wiki-article-list-title">Drawdown Endurance</div>
+        <div class="wiki-article-list-desc">How volatility tolerance is built progressively through experience, like marathon training, by scaling exposure as holding capacity grows.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

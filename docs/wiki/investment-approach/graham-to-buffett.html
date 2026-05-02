@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Graham to Buffett — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337581">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container wiki-container">
+    <div class="wiki-breadcrumb">
+      <a href="/">Home</a> &middot; <a href="/wiki/">Wiki</a> &middot; <a href="/wiki/investment-approach/">Investment Approach</a>
+    </div>
+
+    <div class="wiki-layout">
+      <details class="wiki-sidebar-details" open>
+      <summary class="wiki-sidebar-summary">Browse Wiki</summary>
+      <nav class="wiki-sidebar" aria-label="Wiki navigation">
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/philosophy/">Core Philosophy</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/compounding.html">Compounding</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/equity-risk-premium.html">Equity Risk Premium</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/time-horizon.html">Time Horizon</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/long-term-mindset.html">Long-Term Mindset</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/handling-volatility.html">Handling Volatility</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label wiki-sidebar-cat-label-current" href="/wiki/investment-approach/">Investment Approach</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/value-investing.html">Value Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/quality-investing.html">Quality Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/price-vs-quality.html">Price vs Quality</a></li>
+          <li><a class="wiki-sidebar-link wiki-sidebar-link-active" href="/wiki/investment-approach/graham-to-buffett.html">Graham to Buffett</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/business-analysis/">Business Analysis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/consumers-edge.html">The Consumer's Edge</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/supply-chain-following.html">Supply Chain Following</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/alignment-of-interests.html">Alignment of Interests</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/platform-effects.html">Platform Effects</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/first-principles.html">First Principles Thinking</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/research-process/">Research Process</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/source-hierarchy.html">Source Hierarchy</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/earnings-call-analysis.html">Earnings Call Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/financial-metrics.html">Financial Metrics</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/dcf-models.html">DCF Models</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/ai-research-tools.html">AI Research Tools</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/trust-and-verify.html">Trust and Verify</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/ai-thesis/">AI Thesis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-stack-framework.html">AI Stack Framework</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/chips-layer.html">Chips Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/infrastructure-layer.html">Infrastructure Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/models-layer.html">Models Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/applications-layer.html">Applications Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/jevons-paradox.html">Jevons Paradox</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-agents.html">AI Agents</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/inference-scaling.html">Inference Scaling</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/portfolio-management/">Portfolio Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/dollar-cost-averaging.html">Dollar Cost Averaging</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/core-vs-exploratory.html">Core vs Exploratory</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/position-graduation.html">Position Graduation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/never-trim-winners.html">Never Trim Winners</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/crash-buying-vs-dca.html">Crash Buying vs DCA</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/selling/">Selling</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/thesis-based-selling.html">Thesis-Based Selling</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/durable-sell-triggers.html">Durable Sell Triggers</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/timing-bias.html">Timing Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/sunk-cost-fallacy.html">Sunk Cost Fallacy</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/holding-through-volatility/">Holding Through Volatility</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/safety-nets.html">Safety Nets</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/leverage-elimination.html">Leverage Elimination</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/conviction-testing.html">Conviction Testing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/drawdown-endurance.html">Drawdown Endurance</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/diversification/">Diversification</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/index-investing.html">Index Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/home-country-bias.html">Home Country Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/market-cap-weighting.html">Market-Cap Weighting</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/single-country-risk.html">Single-Country Risk</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/singapore/">Singapore</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/tax-advantages.html">Tax Advantages</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/us-estate-tax.html">US Estate Tax</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/ucits-etfs.html">UCITS ETFs</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/cpf-optimization.html">CPF Optimisation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/srs.html">SRS</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/three-layer-retirement.html">Three-Layer Retirement</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/lifestyle-traps.html">Lifestyle Traps</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/analytical-skills/">Analytical Skills</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/stock-based-compensation.html">Stock-Based Compensation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/dividend-analysis.html">Dividend Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/concentration-risk.html">Concentration Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/sector-focus.html">Sector Focus</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/risk-management/">Risk Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/volatility-as-feature.html">Volatility as Feature</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/margin-avoidance.html">Margin Avoidance</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/tail-risk.html">Tail Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/crisis-vs-noise.html">Crisis vs Noise</a></li>
+        </ul>
+      </div>
+      </nav>
+    </details>
+      <article class="wiki-article transcript-article">
+        <h1 class="wiki-article-title">From Graham to Buffett</h1>
+        <p class="wiki-description">The evolution of value investing — from Benjamin Graham's systematic screening for cheapness to Warren Buffett's emphasis on business quality, moats, and long-term earnings power.</p>
+        <p>The intellectual journey from Benjamin Graham to Warren Buffett is the most important evolution in the history of equity investing. It traces the shift from buying cheap assets to buying excellent businesses — a shift that many individual investors need to make in their own development.</p>
+      <h3 class="article-h2" id="graham-s-approach">Graham&#39;s Approach</h3>
+      <p>Benjamin Graham operated in an era that shaped his method:</p>
+      <ul class="article-list">
+      <li><strong>Scarce information</strong> — corporate disclosures were limited and financial data was difficult to obtain. Diligent analysts could find what others missed.</li>
+      <li><strong>Inefficient markets</strong> — fewer participants, slower communication, and wider mispricings made systematic screening profitable.</li>
+      <li><strong>Tangible businesses</strong> — industrial and manufacturing companies dominated. Their value could be estimated from balance sheet assets.</li>
+      </ul>
+      <p>Graham&#39;s framework was deliberately systematic:</p>
+      <ol class="article-list-ol">
+      <li>Screen for stocks trading below net asset value or at very low earnings multiples</li>
+      <li>Apply a margin of safety — buy only when the discount to intrinsic value is large enough to absorb errors</li>
+      <li>Diversify broadly across many cheap stocks to reduce the impact of individual failures</li>
+      <li>Sell when stocks reach fair value and redeploy into new undervalued opportunities</li>
+      </ol>
+      <p>This was rigorous, disciplined, and effective in its context. It treated investing as a quantitative exercise — a search for statistical mispricings rather than an assessment of business quality.</p>
+      <h3 class="article-h2" id="buffett-s-departure">Buffett&#39;s Departure</h3>
+      <p>Warren Buffett studied under Graham and began his career applying Graham&#39;s methods. But he departed from his teacher&#39;s framework in a fundamental way: he added business quality to the equation.</p>
+      <p>&quot;It&#39;s far better to buy a wonderful company at a fair price than a fair company at a wonderful price.&quot; This single sentence captures the entire evolution. Graham sought wonderful prices. Buffett sought wonderful companies.</p>
+      <p>Buffett&#39;s framework added dimensions that Graham&#39;s approach largely ignored:</p>
+      <ul class="article-list">
+      <li><strong>Competitive moats</strong> — durable structural advantages that protect a business from competition over decades</li>
+      <li><strong>Management quality</strong> — the integrity, skill, and long-term orientation of the people running the business</li>
+      <li><strong>Competitive position</strong> — whether the company&#39;s market position is strengthening or weakening</li>
+      <li><strong>Long-term earnings power</strong> — what the business can earn over the next decade, not just what it earned last year</li>
+      </ul>
+      <h3 class="article-h2" id="what-changed-and-what-remained">What Changed and What Remained</h3>
+      <h4 class="article-h3" id="what-changed">What Changed</h4>
+      <p>The emphasis shifted from pure cheapness to quality. Buffett was willing to pay higher multiples for businesses with durable competitive advantages. He stopped buying mediocre businesses at deep discounts and started buying exceptional businesses at fair prices.</p>
+      <p>The holding period extended dramatically. Graham&#39;s approach implied regular turnover — buy cheap, sell at fair value, rotate. Buffett&#39;s approach implied holding for decades, even permanently, as long as the business quality remained intact.</p>
+      <p>Graham&#39;s approach was statistical — buy a diversified basket of cheap stocks and the mathematics of mean reversion will work in your favour. Buffett&#39;s approach was qualitative — understand the business deeply enough to have conviction that it will compound value for decades. This requires fewer positions, deeper research, and much longer holding periods.</p>
+      <h4 class="article-h3" id="what-remained">What Remained</h4>
+      <p>Valuation still mattered. Buffett did not abandon Graham&#39;s insistence on paying a reasonable price — he simply reordered the priorities. Quality came first, price came second. But price still had to be reasonable. Overpaying for even an excellent business erodes future returns.</p>
+      <p>The margin of safety concept persisted, but its definition expanded. For Graham, the margin of safety was the gap between price and tangible asset value. For Buffett, the margin of safety included the competitive moat itself — a durable advantage that protects the business from permanent impairment.</p>
+      <h3 class="article-h2" id="the-shift-individual-investors-need-to-make">The Shift Individual Investors Need to Make</h3>
+      <p>Many investors naturally begin where Graham began: screening for cheap stocks, focusing on low P/E ratios, buying what appears statistically undervalued. This is a reasonable starting point — it instils valuation discipline and a respect for margin of safety.</p>
+      <p>But the evolution to quality-first thinking is where long-term returns are generated. The shift involves:</p>
+      <ul class="article-list">
+      <li>Moving from asking &quot;is this cheap?&quot; to asking &quot;is this good?&quot;</li>
+      <li>Spending more time on business analysis and less on valuation screening</li>
+      <li>Accepting higher multiples for genuinely excellent businesses</li>
+      <li>Extending holding periods from months or years to decades</li>
+      <li>Letting go of the built-in sell trigger and learning to hold</li>
+      </ul>
+      <p>This is not a rejection of Graham. It is a completion of the framework — adding the qualitative dimensions that Graham&#39;s era did not demand but that modern markets require.</p>
+      <hr class="article-hr">
+      <h3 class="article-h2" id="related">Related</h3>
+      <ul class="article-list">
+      <li><a href="/wiki/investment-approach/value-investing.html">Value Investing</a> — Graham&#39;s original framework in detail</li>
+      <li><a href="/wiki/investment-approach/quality-investing.html">Quality Investing</a> — the approach that emerged from Buffett&#39;s evolution</li>
+      <li><a href="/wiki/investment-approach/price-vs-quality.html">Price vs Quality</a> — the analytical reordering at the heart of this shift</li>
+      </ul>
+        <div class="wiki-prev-next">
+          <a class="wiki-prev-next-link wiki-prev" href="/wiki/investment-approach/price-vs-quality.html"><span class="wiki-prev-next-dir">&larr; Previous</span><span class="wiki-prev-next-title">Price vs Quality</span></a>
+          <span></span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

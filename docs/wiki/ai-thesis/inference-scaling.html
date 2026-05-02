@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inference Scaling — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337584">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container wiki-container">
+    <div class="wiki-breadcrumb">
+      <a href="/">Home</a> &middot; <a href="/wiki/">Wiki</a> &middot; <a href="/wiki/ai-thesis/">AI Thesis</a>
+    </div>
+
+    <div class="wiki-layout">
+      <details class="wiki-sidebar-details" open>
+      <summary class="wiki-sidebar-summary">Browse Wiki</summary>
+      <nav class="wiki-sidebar" aria-label="Wiki navigation">
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/philosophy/">Core Philosophy</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/compounding.html">Compounding</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/equity-risk-premium.html">Equity Risk Premium</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/time-horizon.html">Time Horizon</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/long-term-mindset.html">Long-Term Mindset</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/philosophy/handling-volatility.html">Handling Volatility</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/investment-approach/">Investment Approach</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/value-investing.html">Value Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/quality-investing.html">Quality Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/price-vs-quality.html">Price vs Quality</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/investment-approach/graham-to-buffett.html">Graham to Buffett</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/business-analysis/">Business Analysis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/consumers-edge.html">The Consumer's Edge</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/supply-chain-following.html">Supply Chain Following</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/alignment-of-interests.html">Alignment of Interests</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/irreplaceability.html">Irreplaceability</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/vertical-integration.html">Vertical Integration</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/platform-effects.html">Platform Effects</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/business-analysis/first-principles.html">First Principles Thinking</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/research-process/">Research Process</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/source-hierarchy.html">Source Hierarchy</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/earnings-call-analysis.html">Earnings Call Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/financial-metrics.html">Financial Metrics</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/dcf-models.html">DCF Models</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/ai-research-tools.html">AI Research Tools</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/research-process/trust-and-verify.html">Trust and Verify</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label wiki-sidebar-cat-label-current" href="/wiki/ai-thesis/">AI Thesis</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-stack-framework.html">AI Stack Framework</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/chips-layer.html">Chips Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/infrastructure-layer.html">Infrastructure Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/models-layer.html">Models Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/applications-layer.html">Applications Layer</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/jevons-paradox.html">Jevons Paradox</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/ai-thesis/ai-agents.html">AI Agents</a></li>
+          <li><a class="wiki-sidebar-link wiki-sidebar-link-active" href="/wiki/ai-thesis/inference-scaling.html">Inference Scaling</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/portfolio-management/">Portfolio Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/dollar-cost-averaging.html">Dollar Cost Averaging</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/core-vs-exploratory.html">Core vs Exploratory</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/position-graduation.html">Position Graduation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/never-trim-winners.html">Never Trim Winners</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/portfolio-management/crash-buying-vs-dca.html">Crash Buying vs DCA</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/selling/">Selling</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/thesis-based-selling.html">Thesis-Based Selling</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/durable-sell-triggers.html">Durable Sell Triggers</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/timing-bias.html">Timing Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/selling/sunk-cost-fallacy.html">Sunk Cost Fallacy</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/holding-through-volatility/">Holding Through Volatility</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/safety-nets.html">Safety Nets</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/leverage-elimination.html">Leverage Elimination</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/conviction-testing.html">Conviction Testing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/holding-through-volatility/drawdown-endurance.html">Drawdown Endurance</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/diversification/">Diversification</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/index-investing.html">Index Investing</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/home-country-bias.html">Home Country Bias</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/market-cap-weighting.html">Market-Cap Weighting</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/diversification/single-country-risk.html">Single-Country Risk</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/singapore/">Singapore</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/tax-advantages.html">Tax Advantages</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/us-estate-tax.html">US Estate Tax</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/ucits-etfs.html">UCITS ETFs</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/cpf-optimization.html">CPF Optimisation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/srs.html">SRS</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/three-layer-retirement.html">Three-Layer Retirement</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/singapore/lifestyle-traps.html">Lifestyle Traps</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/analytical-skills/">Analytical Skills</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/stock-based-compensation.html">Stock-Based Compensation</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/dividend-analysis.html">Dividend Analysis</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/concentration-risk.html">Concentration Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/analytical-skills/sector-focus.html">Sector Focus</a></li>
+        </ul>
+      </div>
+      <div class="wiki-sidebar-cat">
+        <a class="wiki-sidebar-cat-label" href="/wiki/risk-management/">Risk Management</a>
+        <ul class="wiki-sidebar-list">
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/volatility-as-feature.html">Volatility as Feature</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/margin-avoidance.html">Margin Avoidance</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/tail-risk.html">Tail Risk</a></li>
+          <li><a class="wiki-sidebar-link" href="/wiki/risk-management/crisis-vs-noise.html">Crisis vs Noise</a></li>
+        </ul>
+      </div>
+      </nav>
+    </details>
+      <article class="wiki-article transcript-article">
+        <h1 class="wiki-article-title">Inference Scaling</h1>
+        <p class="wiki-description">Why inference — running trained models to serve user requests — is where AI's recurring revenue will come from, and the dynamics driving its growth.</p>
+        <p>Inference — running trained models to serve user requests — is where AI&#39;s recurring revenue will come from. Training a model is a large, periodic cost. Serving that model to millions of users is an ongoing, scalable revenue stream.</p>
+      <h3 class="article-h2" id="key-dynamics">Key Dynamics</h3>
+      <h4 class="article-h3" id="rapidly-falling-costs">Rapidly Falling Costs</h4>
+      <p>Inference costs are falling approximately 90% per year. This dramatic cost reduction is driven by hardware improvements, software optimisation, model distillation, and architectural innovation. The pace of cost reduction is extraordinary even by technology industry standards.</p>
+      <h4 class="article-h3" id="growth-over-margin-for-now">Growth Over Margin (For Now)</h4>
+      <p>AI companies are currently passing cost savings to users as lower prices, prioritising growth over margin. This is a deliberate strategic choice: expand the user base and embed AI into workflows while costs are falling, then capture margin as the market matures and switching costs increase.</p>
+      <h4 class="article-h3" id="scaling-with-user-growth">Scaling With User Growth</h4>
+      <p>As the inference business scales with user growth, it will become the dominant revenue driver for AI companies. Every new user, every new application, every new workflow that incorporates AI generates inference demand. The revenue compounds as adoption deepens.</p>
+      <h4 class="article-h3" id="test-time-compute">Test-Time Compute</h4>
+      <p>The shift from one-shot prompting to test-time compute — models &quot;thinking longer&quot; on harder problems — means more compute cycles per query, not fewer. When a model reasons through a complex problem step by step, it consumes significantly more inference compute than a simple response. This dynamic pushes per-query compute consumption upward even as per-unit costs fall.</p>
+      <p>This is analogous to how cloud computing evolved. Infrastructure costs fell steadily, usage expanded dramatically, and the platforms became enormously profitable over time. Early cloud sceptics focused on falling per-unit prices and missed the exponential growth in total usage. The same dynamic is playing out with AI inference.</p>
+      <h3 class="article-h2" id="the-large-scale-provider-advantage">The Large-Scale Provider Advantage</h3>
+      <p>The economics of inference will eventually favour large-scale providers with the infrastructure already in place. Running inference efficiently requires:</p>
+      <ul class="article-list">
+      <li>Massive GPU clusters with high utilisation rates</li>
+      <li>Sophisticated orchestration and load balancing</li>
+      <li>Global distribution for low-latency serving</li>
+      <li>The capital to invest continuously in next-generation hardware</li>
+      </ul>
+      <p>These requirements naturally favour the hyperscalers and established AI companies that have already built this infrastructure at scale.</p>
+      <p>Inference is the recurring revenue engine of AI. Companies positioned to serve inference at scale — with the infrastructure, customer relationships, and capital to maintain their position — are the primary beneficiaries of AI adoption growth regardless of which specific models or applications win.</p>
+      <h3 class="article-h2" id="related">Related</h3>
+      <ul class="article-list">
+      <li><a href="/wiki/ai-thesis/infrastructure-layer.html">The Infrastructure Layer</a> — The hyperscalers building the infrastructure inference runs on</li>
+      <li><a href="/wiki/ai-thesis/jevons-paradox.html">Jevons Paradox in AI</a> — Why falling inference costs drive more demand, not less</li>
+      <li><a href="/wiki/ai-thesis/models-layer.html">The Models Layer</a> — How frontier model companies are building inference-driven revenue</li>
+      </ul>
+        <div class="wiki-prev-next">
+          <a class="wiki-prev-next-link wiki-prev" href="/wiki/ai-thesis/ai-agents.html"><span class="wiki-prev-next-dir">&larr; Previous</span><span class="wiki-prev-next-title">AI Agents</span></a>
+          <span></span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

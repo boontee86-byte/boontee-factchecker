@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337579">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Singapore</div>
+      <h1>Singapore</h1>
+      <p class="wiki-category-description">Tax advantages, UCITS ETFs, CPF optimisation, SRS, and avoiding lifestyle traps.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/tax-advantages.html">
+        <div class="wiki-article-list-title">Tax Advantages</div>
+        <div class="wiki-article-list-desc">How Singapore's zero capital gains tax policy creates a structural compounding advantage for equity investors compared to taxed jurisdictions.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/us-estate-tax.html">
+        <div class="wiki-article-list-title">US Estate Tax</div>
+        <div class="wiki-article-list-desc">Understanding the US estate tax risk for Singaporeans holding US-listed securities and strategies to mitigate it.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/ucits-etfs.html">
+        <div class="wiki-article-list-title">UCITS ETFs</div>
+        <div class="wiki-article-list-desc">European-domiciled ETFs that provide US equity exposure without US estate tax risk and with reduced dividend withholding tax.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/cpf-optimization.html">
+        <div class="wiki-article-list-title">CPF Optimisation</div>
+        <div class="wiki-article-list-desc">Strategies for optimising CPF as a risk-free bond allocation within a broader investment framework.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/srs.html">
+        <div class="wiki-article-list-title">SRS</div>
+        <div class="wiki-article-list-desc">How to use Singapore's voluntary SRS account for tax-efficient index fund investing as part of a layered retirement strategy.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/three-layer-retirement.html">
+        <div class="wiki-article-list-title">Three-Layer Retirement</div>
+        <div class="wiki-article-list-desc">A layered retirement framework using CPF, SRS, and brokerage accounts where each layer serves a distinct purpose and operates independently.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/singapore/lifestyle-traps.html">
+        <div class="wiki-article-list-title">Lifestyle Traps</div>
+        <div class="wiki-article-list-desc">Cultural spending pressures in Singapore that work against building long-term wealth, and how to recognise them.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

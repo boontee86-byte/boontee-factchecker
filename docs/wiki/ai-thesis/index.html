@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Thesis — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337578">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; AI Thesis</div>
+      <h1>AI Thesis</h1>
+      <p class="wiki-category-description">The five-layer AI stack, Jevons paradox, AI agents, and why inference scaling matters.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/ai-stack-framework.html">
+        <div class="wiki-article-list-title">AI Stack Framework</div>
+        <div class="wiki-article-list-desc">Jensen Huang's five-layer framework for understanding where value accumulates across the AI technology stack, from energy to applications.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/chips-layer.html">
+        <div class="wiki-article-list-title">Chips Layer</div>
+        <div class="wiki-article-list-desc">How GPUs became the dominant compute unit for AI workloads, and why Nvidia's CUDA ecosystem creates deep, self-reinforcing lock-in.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/infrastructure-layer.html">
+        <div class="wiki-article-list-title">Infrastructure Layer</div>
+        <div class="wiki-article-list-desc">How the three hyperscalers — AWS, Azure, and Google Cloud — are building the physical and software infrastructure that AI runs on.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/models-layer.html">
+        <div class="wiki-article-list-title">Models Layer</div>
+        <div class="wiki-article-list-desc">The frontier AI model companies — OpenAI, Anthropic, xAI — their economics, growth trajectories, and how investors gain exposure.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/applications-layer.html">
+        <div class="wiki-article-list-title">Applications Layer</div>
+        <div class="wiki-article-list-desc">Why the AI application layer defies broad generalisation and requires individual evaluation of each company's value creation potential.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/jevons-paradox.html">
+        <div class="wiki-article-list-title">Jevons Paradox</div>
+        <div class="wiki-article-list-desc">How efficiency improvements in AI — cheaper models, lower inference costs — lead to more compute demand, not less, mirroring a 19th-century observation about coal consumption.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/ai-agents.html">
+        <div class="wiki-article-list-title">AI Agents</div>
+        <div class="wiki-article-list-desc">How the shift from chat interfaces to agentic AI systems with tool access represents a structural change in economic output per employee.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/ai-thesis/inference-scaling.html">
+        <div class="wiki-article-list-title">Inference Scaling</div>
+        <div class="wiki-article-list-desc">Why inference — running trained models to serve user requests — is where AI's recurring revenue will come from, and the dynamics driving its growth.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

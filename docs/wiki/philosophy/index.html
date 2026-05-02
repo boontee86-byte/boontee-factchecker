@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Philosophy — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337577">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Core Philosophy</div>
+      <h1>Core Philosophy</h1>
+      <p class="wiki-category-description">Compounding, equity risk premium, time horizons, and the long-term mindset that underpins everything.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/philosophy/compounding.html">
+        <div class="wiki-article-list-title">Compounding</div>
+        <div class="wiki-article-list-desc">How compounding works as the engine of long-term wealth, and why not interrupting it matters more than picking the right stocks.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/philosophy/equity-risk-premium.html">
+        <div class="wiki-article-list-title">Equity Risk Premium</div>
+        <div class="wiki-article-list-desc">The excess return that equities deliver over risk-free assets, and why capturing it requires no special skill — only the willingness to stay invested.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/philosophy/time-horizon.html">
+        <div class="wiki-article-list-title">Time Horizon</div>
+        <div class="wiki-article-list-desc">How the timeframe you choose determines the tools that matter — and why most investors misjudge their own horizon until a drawdown tests it.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/philosophy/long-term-mindset.html">
+        <div class="wiki-article-list-title">Long-Term Mindset</div>
+        <div class="wiki-article-list-desc">Why equities are the best-performing asset class over long horizons, and why the most powerful strategy is also the simplest: buy consistently, hold patiently, do almost nothing.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/philosophy/handling-volatility.html">
+        <div class="wiki-article-list-title">Handling Volatility</div>
+        <div class="wiki-article-list-desc">Why short-term volatility looks terrifying but long-term volatility is surprisingly tame — and how diversification across time smooths the ride.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

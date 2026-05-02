@@ -1,0 +1,163 @@
+{
+  "tagline": "Concepts, frameworks, and principles for building long-term wealth through equity investing.",
+  "categories": [
+    {
+      "slug": "philosophy",
+      "label": "Core Philosophy",
+      "description": "Compounding, equity risk premium, time horizons, and the long-term mindset that underpins everything.",
+      "icon": "heart",
+      "articles": [
+        { "slug": "compounding", "label": "Compounding" },
+        { "slug": "equity-risk-premium", "label": "Equity Risk Premium" },
+        { "slug": "time-horizon", "label": "Time Horizon" },
+        { "slug": "long-term-mindset", "label": "Long-Term Mindset" },
+        { "slug": "handling-volatility", "label": "Handling Volatility" }
+      ]
+    },
+    {
+      "slug": "investment-approach",
+      "label": "Investment Approach",
+      "description": "The evolution from value investing to quality investing, and why asking \"is this good?\" beats \"is this cheap?\"",
+      "icon": "rocket",
+      "articles": [
+        { "slug": "value-investing", "label": "Value Investing" },
+        { "slug": "quality-investing", "label": "Quality Investing" },
+        { "slug": "price-vs-quality", "label": "Price vs Quality" },
+        { "slug": "graham-to-buffett", "label": "Graham to Buffett" }
+      ]
+    },
+    {
+      "slug": "business-analysis",
+      "label": "Business Analysis",
+      "description": "How to evaluate business models: the consumer's edge, supply chains, moats, and first principles thinking.",
+      "icon": "magnifier",
+      "articles": [
+        { "slug": "consumers-edge", "label": "The Consumer's Edge" },
+        { "slug": "supply-chain-following", "label": "Supply Chain Following" },
+        { "slug": "alignment-of-interests", "label": "Alignment of Interests" },
+        { "slug": "irreplaceability", "label": "Irreplaceability" },
+        { "slug": "vertical-integration", "label": "Vertical Integration" },
+        { "slug": "platform-effects", "label": "Platform Effects" },
+        { "slug": "first-principles", "label": "First Principles Thinking" }
+      ]
+    },
+    {
+      "slug": "research-process",
+      "label": "Research Process",
+      "description": "Source hierarchy, earnings call analysis, financial metrics, and using AI tools for research.",
+      "icon": "document",
+      "articles": [
+        { "slug": "source-hierarchy", "label": "Source Hierarchy" },
+        { "slug": "earnings-call-analysis", "label": "Earnings Call Analysis" },
+        { "slug": "financial-metrics", "label": "Financial Metrics" },
+        { "slug": "dcf-models", "label": "DCF Models" },
+        { "slug": "ai-research-tools", "label": "AI Research Tools" },
+        { "slug": "trust-and-verify", "label": "Trust and Verify" }
+      ]
+    },
+    {
+      "slug": "ai-thesis",
+      "label": "AI Thesis",
+      "description": "The five-layer AI stack, Jevons paradox, AI agents, and why inference scaling matters.",
+      "icon": "laptop",
+      "articles": [
+        { "slug": "ai-stack-framework", "label": "AI Stack Framework" },
+        { "slug": "chips-layer", "label": "Chips Layer" },
+        { "slug": "infrastructure-layer", "label": "Infrastructure Layer" },
+        { "slug": "models-layer", "label": "Models Layer" },
+        { "slug": "applications-layer", "label": "Applications Layer" },
+        { "slug": "jevons-paradox", "label": "Jevons Paradox" },
+        { "slug": "ai-agents", "label": "AI Agents" },
+        { "slug": "inference-scaling", "label": "Inference Scaling" }
+      ]
+    },
+    {
+      "slug": "portfolio-management",
+      "label": "Portfolio Management",
+      "description": "Dollar cost averaging, core vs exploratory positions, position graduation, and letting winners run.",
+      "icon": "list-format",
+      "articles": [
+        { "slug": "dollar-cost-averaging", "label": "Dollar Cost Averaging" },
+        { "slug": "core-vs-exploratory", "label": "Core vs Exploratory" },
+        { "slug": "position-graduation", "label": "Position Graduation" },
+        { "slug": "never-trim-winners", "label": "Never Trim Winners" },
+        { "slug": "crash-buying-vs-dca", "label": "Crash Buying vs DCA" }
+      ]
+    },
+    {
+      "slug": "selling",
+      "label": "Selling",
+      "description": "Thesis-based selling, durable sell triggers, timing bias, and navigating sunk cost fallacy.",
+      "icon": "warning",
+      "articles": [
+        { "slug": "thesis-based-selling", "label": "Thesis-Based Selling" },
+        { "slug": "durable-sell-triggers", "label": "Durable Sell Triggers" },
+        { "slug": "timing-bias", "label": "Timing Bias" },
+        { "slug": "sunk-cost-fallacy", "label": "Sunk Cost Fallacy" }
+      ]
+    },
+    {
+      "slug": "holding-through-volatility",
+      "label": "Holding Through Volatility",
+      "description": "Safety nets, leverage elimination, conviction testing, and building drawdown endurance.",
+      "icon": "approve-check-circle",
+      "articles": [
+        { "slug": "safety-nets", "label": "Safety Nets" },
+        { "slug": "leverage-elimination", "label": "Leverage Elimination" },
+        { "slug": "conviction-testing", "label": "Conviction Testing" },
+        { "slug": "drawdown-endurance", "label": "Drawdown Endurance" }
+      ]
+    },
+    {
+      "slug": "diversification",
+      "label": "Diversification",
+      "description": "Index investing, home country bias, market-cap weighting, and the cost of going too narrow.",
+      "icon": "random",
+      "articles": [
+        { "slug": "index-investing", "label": "Index Investing" },
+        { "slug": "home-country-bias", "label": "Home Country Bias" },
+        { "slug": "market-cap-weighting", "label": "Market-Cap Weighting" },
+        { "slug": "single-country-risk", "label": "Single-Country Risk" }
+      ]
+    },
+    {
+      "slug": "singapore",
+      "label": "Singapore",
+      "description": "Tax advantages, UCITS ETFs, CPF optimisation, SRS, and avoiding lifestyle traps.",
+      "icon": "star",
+      "articles": [
+        { "slug": "tax-advantages", "label": "Tax Advantages" },
+        { "slug": "us-estate-tax", "label": "US Estate Tax" },
+        { "slug": "ucits-etfs", "label": "UCITS ETFs" },
+        { "slug": "cpf-optimization", "label": "CPF Optimisation" },
+        { "slug": "srs", "label": "SRS" },
+        { "slug": "three-layer-retirement", "label": "Three-Layer Retirement" },
+        { "slug": "lifestyle-traps", "label": "Lifestyle Traps" }
+      ]
+    },
+    {
+      "slug": "analytical-skills",
+      "label": "Analytical Skills",
+      "description": "Stock-based compensation, dividend analysis, concentration risk, and knowing your sector scope.",
+      "icon": "setting",
+      "articles": [
+        { "slug": "stock-based-compensation", "label": "Stock-Based Compensation" },
+        { "slug": "dividend-analysis", "label": "Dividend Analysis" },
+        { "slug": "concentration-risk", "label": "Concentration Risk" },
+        { "slug": "sector-focus", "label": "Sector Focus" }
+      ]
+    },
+    {
+      "slug": "risk-management",
+      "label": "Risk Management",
+      "description": "Volatility as a feature, margin avoidance, tail risk, and distinguishing crisis from noise.",
+      "icon": "error",
+      "articles": [
+        { "slug": "volatility-as-feature", "label": "Volatility as Feature" },
+        { "slug": "margin-avoidance", "label": "Margin Avoidance" },
+        { "slug": "tail-risk", "label": "Tail Risk" },
+        { "slug": "crisis-vs-noise", "label": "Crisis vs Noise" }
+      ]
+    }
+  ]
+}

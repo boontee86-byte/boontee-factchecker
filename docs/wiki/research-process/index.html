@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Process — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337578">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Research Process</div>
+      <h1>Research Process</h1>
+      <p class="wiki-category-description">Source hierarchy, earnings call analysis, financial metrics, and using AI tools for research.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/research-process/source-hierarchy.html">
+        <div class="wiki-article-list-title">Source Hierarchy</div>
+        <div class="wiki-article-list-desc">How to weight and prioritize different information sources when conducting investment research.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/research-process/earnings-call-analysis.html">
+        <div class="wiki-article-list-title">Earnings Call Analysis</div>
+        <div class="wiki-article-list-desc">How to extract maximum insight from quarterly earnings calls, the single most valuable practice in investment research.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/research-process/financial-metrics.html">
+        <div class="wiki-article-list-title">Financial Metrics</div>
+        <div class="wiki-article-list-desc">Why tracking financial metrics over time matters more than any single data point, and which metrics to focus on.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/research-process/dcf-models.html">
+        <div class="wiki-article-list-title">DCF Models</div>
+        <div class="wiki-article-list-desc">How discounted cash flow models serve as a thinking tool for making investment assumptions explicit, not as precision instruments.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/research-process/ai-research-tools.html">
+        <div class="wiki-article-list-title">AI Research Tools</div>
+        <div class="wiki-article-list-desc">How large language models and agentic AI systems serve as genuine productivity tools for investment research.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/research-process/trust-and-verify.html">
+        <div class="wiki-article-list-title">Trust and Verify</div>
+        <div class="wiki-article-list-desc">How to evaluate management credibility by tracking promises against outcomes over time.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

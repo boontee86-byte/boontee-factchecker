@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytical Skills — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337579">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Analytical Skills</div>
+      <h1>Analytical Skills</h1>
+      <p class="wiki-category-description">Stock-based compensation, dividend analysis, concentration risk, and knowing your sector scope.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/analytical-skills/stock-based-compensation.html">
+        <div class="wiki-article-list-title">Stock-Based Compensation</div>
+        <div class="wiki-article-list-desc">Why SBC should be treated as a real expense, how non-GAAP reporting can obscure cost structure problems, and when high compensation may be tolerable.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/analytical-skills/dividend-analysis.html">
+        <div class="wiki-article-list-title">Dividend Analysis</div>
+        <div class="wiki-article-list-desc">How to evaluate dividends as a capital allocation mechanism, the distinction between distributing earnings and consuming the future, and tax considerations for income-oriented investing.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/analytical-skills/concentration-risk.html">
+        <div class="wiki-article-list-title">Concentration Risk</div>
+        <div class="wiki-article-list-desc">Understanding the nuances of portfolio concentration, the difference between earned and designed concentration, and why retail investors have a structural advantage in holding concentrated positions.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/analytical-skills/sector-focus.html">
+        <div class="wiki-article-list-title">Sector Focus</div>
+        <div class="wiki-article-list-desc">Why deep sector knowledge built on genuine curiosity produces better investment outcomes, which sectors require special caution, and when ETFs are the appropriate solution.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

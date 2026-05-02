@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selling — Investing Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css?v=1777688337578">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
+</head>
+<body>
+  <button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; Selling</div>
+      <h1>Selling</h1>
+      <p class="wiki-category-description">Thesis-based selling, durable sell triggers, timing bias, and navigating sunk cost fallacy.</p>
+    </div>
+    <div class="wiki-article-list">
+
+      <a class="wiki-article-list-item" href="/wiki/selling/thesis-based-selling.html">
+        <div class="wiki-article-list-title">Thesis-Based Selling</div>
+        <div class="wiki-article-list-desc">Exit only when the business has fundamentally changed, not on temporary headwinds, and hold the decision to a very high standard of evidence.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/selling/durable-sell-triggers.html">
+        <div class="wiki-article-list-title">Durable Sell Triggers</div>
+        <div class="wiki-article-list-desc">The deliberately short list of genuine reasons to sell a position, and the much longer list of things that are not sell triggers.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/selling/timing-bias.html">
+        <div class="wiki-article-list-title">Timing Bias</div>
+        <div class="wiki-article-list-desc">How the tendency to sell at the point of maximum pain systematically destroys returns, and how to build rules that counteract it.</div>
+      </a>
+
+      <a class="wiki-article-list-item" href="/wiki/selling/sunk-cost-fallacy.html">
+        <div class="wiki-article-list-title">Sunk Cost Fallacy</div>
+        <div class="wiki-article-list-desc">The risk of holding a failing position because selling feels like admitting defeat, and how long-term investing can mask this bias.</div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Created by <a href="https://www.youtube.com/@BoonTee" target="_blank">BoonTee</a>
+      &middot;
+      <a href="https://t.me/boontee86" target="_blank">Suggest a video on Telegram</a>
+    </div>
+  </footer>
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem('theme', t);
+      updateToggleLabel();
+    }
+    function updateToggleLabel() {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = document.documentElement.dataset.theme === 'light' ? '[ dark ]' : '[ light ]';
+    }
+    updateToggleLabel();
+  </script>
+</body>
+</html>

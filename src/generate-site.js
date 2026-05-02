@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { listVideos, getVideo, listResearch, getResearch } = require('./db');
+const { loadCategoriesConfig, loadAllArticles } = require('./wiki-loader');
+const { formatWikiArticle } = require('./wiki-markdown');
 
 const SITE_DIR = path.join(__dirname, '..', 'docs');
 
@@ -59,7 +61,7 @@ function htmlFooter() {
 </html>`;
 }
 
-function generateIndex(videos, researchItems) {
+function generateIndex(videos, researchItems, wikiConfig) {
   const videoCards = videos.map(v => `
       <div class="video-card">
         <a href="/video/${v.id}.html">
@@ -119,8 +121,137 @@ ${videoCards}
       </div>`;
       }).join('\n')}
     </div>` : ''}
+
+    ${wikiConfig ? generateWikiHomeSection(wikiConfig) : ''}
   </main>
 
+${htmlFooter()}`;
+}
+
+function generateWikiHomeSection(wikiConfig) {
+  const cards = wikiConfig.categories.map(cat => `
+      <a class="wiki-cat-card" href="/wiki/${cat.slug}/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">${escapeHtml(cat.label)}</div>
+          <div class="wiki-cat-card-description">${escapeHtml(cat.description)}</div>
+        </div>
+      </a>`).join('\n');
+
+  return `<div class="section-divider"></div>
+    <h2 class="section-header">Investing Wiki</h2>
+    <p class="section-description">A structured knowledge base of frameworks and principles for long-term equity investing.</p>
+    <div class="wiki-grid">
+${cards}
+    </div>`;
+}
+
+function buildWikiSidebar(wikiConfig, currentCatSlug, currentArticleSlug) {
+  const groups = wikiConfig.categories.map(cat => {
+    const isCurrentCat = cat.slug === currentCatSlug;
+    const links = cat.articles.map(a => {
+      const isActive = isCurrentCat && a.slug === currentArticleSlug;
+      const cls = isActive ? 'wiki-sidebar-link wiki-sidebar-link-active' : 'wiki-sidebar-link';
+      return `<li><a class="${cls}" href="/wiki/${cat.slug}/${a.slug}.html">${escapeHtml(a.label)}</a></li>`;
+    }).join('\n          ');
+    const labelCls = isCurrentCat ? 'wiki-sidebar-cat-label wiki-sidebar-cat-label-current' : 'wiki-sidebar-cat-label';
+    return `<div class="wiki-sidebar-cat">
+        <a class="${labelCls}" href="/wiki/${cat.slug}/">${escapeHtml(cat.label)}</a>
+        <ul class="wiki-sidebar-list">
+          ${links}
+        </ul>
+      </div>`;
+  }).join('\n      ');
+
+  return `<details class="wiki-sidebar-details" open>
+      <summary class="wiki-sidebar-summary">Browse Wiki</summary>
+      <nav class="wiki-sidebar" aria-label="Wiki navigation">
+      ${groups}
+      </nav>
+    </details>`;
+}
+
+function generateWikiIndexPage(wikiConfig) {
+  const cards = wikiConfig.categories.map(cat => `
+      <a class="wiki-cat-card" href="/wiki/${cat.slug}/">
+        <div class="wiki-cat-card-body">
+          <div class="wiki-cat-card-label">${escapeHtml(cat.label)}</div>
+          <div class="wiki-cat-card-description">${escapeHtml(cat.description)}</div>
+        </div>
+      </a>`).join('\n');
+
+  return `${htmlHead('Investing Wiki — BoonTee Insights')}
+  <main class="container">
+    <a href="/" class="back-link">&larr; Back to home</a>
+    <div class="wiki-landing-header">
+      <h1>Investing Wiki</h1>
+      <p class="wiki-landing-tagline">${escapeHtml(wikiConfig.tagline)}</p>
+    </div>
+    <div class="wiki-grid">
+${cards}
+    </div>
+  </main>
+${htmlFooter()}`;
+}
+
+function generateWikiCategoryPage(category) {
+  const items = category.articles.map(a => {
+    const article = require('./wiki-loader').loadWikiArticle(category.slug, a.slug);
+    return `
+      <a class="wiki-article-list-item" href="/wiki/${category.slug}/${a.slug}.html">
+        <div class="wiki-article-list-title">${escapeHtml(a.label)}</div>
+        <div class="wiki-article-list-desc">${escapeHtml(article.description)}</div>
+      </a>`;
+  }).join('\n');
+
+  return `${htmlHead(`${category.label} — Investing Wiki`)}
+  <main class="container">
+    <a href="/wiki/" class="back-link">&larr; Back to wiki</a>
+    <div class="wiki-category-header">
+      <div class="wiki-breadcrumb"><a href="/wiki/">Wiki</a> &middot; ${escapeHtml(category.label)}</div>
+      <h1>${escapeHtml(category.label)}</h1>
+      <p class="wiki-category-description">${escapeHtml(category.description)}</p>
+    </div>
+    <div class="wiki-article-list">
+${items}
+    </div>
+  </main>
+${htmlFooter()}`;
+}
+
+function generateWikiArticlePage(article, category, articleMeta, wikiConfig) {
+  const { html: bodyHtml } = formatWikiArticle(article.body, { extractHeadings: true });
+  const sidebar = buildWikiSidebar(wikiConfig, category.slug, article.articleSlug);
+
+  // Prev / next within the same category
+  const idx = category.articles.findIndex(a => a.slug === article.articleSlug);
+  const prev = idx > 0 ? category.articles[idx - 1] : null;
+  const next = idx < category.articles.length - 1 ? category.articles[idx + 1] : null;
+  const prevHtml = prev
+    ? `<a class="wiki-prev-next-link wiki-prev" href="/wiki/${category.slug}/${prev.slug}.html"><span class="wiki-prev-next-dir">&larr; Previous</span><span class="wiki-prev-next-title">${escapeHtml(prev.label)}</span></a>`
+    : '<span></span>';
+  const nextHtml = next
+    ? `<a class="wiki-prev-next-link wiki-next" href="/wiki/${category.slug}/${next.slug}.html"><span class="wiki-prev-next-dir">Next &rarr;</span><span class="wiki-prev-next-title">${escapeHtml(next.label)}</span></a>`
+    : '<span></span>';
+
+  return `${htmlHead(`${article.title} — Investing Wiki`)}
+  <main class="container wiki-container">
+    <div class="wiki-breadcrumb">
+      <a href="/">Home</a> &middot; <a href="/wiki/">Wiki</a> &middot; <a href="/wiki/${category.slug}/">${escapeHtml(category.label)}</a>
+    </div>
+
+    <div class="wiki-layout">
+      ${sidebar}
+      <article class="wiki-article transcript-article">
+        <h1 class="wiki-article-title">${escapeHtml(article.title)}</h1>
+        ${article.description ? `<p class="wiki-description">${escapeHtml(article.description)}</p>` : ''}
+        ${bodyHtml}
+        <div class="wiki-prev-next">
+          ${prevHtml}
+          ${nextHtml}
+        </div>
+      </article>
+    </div>
+  </main>
 ${htmlFooter()}`;
 }
 
@@ -457,11 +588,13 @@ ${htmlFooter()}`;
 async function main() {
   const videos = await listVideos();
   const researchItems = await listResearch();
+  const wikiConfig = loadCategoriesConfig();
+  const wikiArticles = loadAllArticles(wikiConfig);
 
   // Generate index page
-  const indexHtml = generateIndex(videos, researchItems);
+  const indexHtml = generateIndex(videos, researchItems, wikiConfig);
   fs.writeFileSync(path.join(SITE_DIR, 'index.html'), indexHtml);
-  console.log(`Generated index.html (${videos.length} videos, ${researchItems.length} research articles)`);
+  console.log(`Generated index.html (${videos.length} videos, ${researchItems.length} research articles, ${wikiConfig.categories.length} wiki categories)`);
 
   // Generate individual video pages
   const videoDir = path.join(SITE_DIR, 'video');
@@ -486,6 +619,26 @@ async function main() {
     fs.writeFileSync(path.join(researchDir, `${r.id}.html`), researchHtml);
     console.log(`Generated research/${r.id}.html`);
   }
+
+  // Generate wiki pages
+  const wikiDir = path.join(SITE_DIR, 'wiki');
+  if (!fs.existsSync(wikiDir)) fs.mkdirSync(wikiDir, { recursive: true });
+
+  fs.writeFileSync(path.join(wikiDir, 'index.html'), generateWikiIndexPage(wikiConfig));
+  console.log('Generated wiki/index.html');
+
+  for (const category of wikiConfig.categories) {
+    const catDir = path.join(wikiDir, category.slug);
+    if (!fs.existsSync(catDir)) fs.mkdirSync(catDir, { recursive: true });
+    fs.writeFileSync(path.join(catDir, 'index.html'), generateWikiCategoryPage(category));
+  }
+  console.log(`Generated ${wikiConfig.categories.length} wiki category pages`);
+
+  for (const { category, articleMeta, article } of wikiArticles) {
+    const out = generateWikiArticlePage(article, category, articleMeta, wikiConfig);
+    fs.writeFileSync(path.join(wikiDir, category.slug, `${article.articleSlug}.html`), out);
+  }
+  console.log(`Generated ${wikiArticles.length} wiki article pages`);
 
   console.log('Site generation complete.');
 }
