@@ -162,7 +162,7 @@ function buildWikiSidebar(wikiConfig, currentCatSlug, currentArticleSlug) {
       </div>`;
   }).join('\n      ');
 
-  return `<details class="wiki-sidebar-details" open>
+  return `<details class="wiki-sidebar-details">
       <summary class="wiki-sidebar-summary">Browse Wiki</summary>
       <nav class="wiki-sidebar" aria-label="Wiki navigation">
       ${groups}

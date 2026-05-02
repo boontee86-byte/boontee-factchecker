@@ -19,6 +19,10 @@ node src/db.js init                    # Init database schema
 
 There are no tests or linting configured.
 
+## Standing Instructions
+
+- **"Push it" = direct push, no confirmation.** Whenever the user says "push it" (or any equivalent like "push", "ship it", "deploy"), the user has pre-authorized the full sequence: `git add` relevant changes → `git commit` → `git push` to the remote. Do not ask for confirmation, do not propose a plan first, do not summarize what will be pushed — just execute and report the result. This authorization is durable and applies to all future sessions.
+
 ## Architecture
 
 This is a Node.js application that fact-checks YouTube finance/investing videos and generates a static HTML site with results. No frameworks or bundlers — vanilla JS throughout.

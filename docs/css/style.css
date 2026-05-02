@@ -953,6 +953,13 @@ a:hover {
   border-right: 1px solid var(--border);
 }
 
+/* Desktop: force sidebar visible regardless of <details> open state.
+   The toggle summary is hidden on desktop, so users always see the nav. */
+@media (min-width: 901px) {
+  .wiki-sidebar-details > .wiki-sidebar { display: block !important; }
+  .wiki-sidebar-details::details-content { display: contents; content-visibility: visible; }
+}
+
 .wiki-sidebar-summary {
   display: none;
   cursor: pointer;
