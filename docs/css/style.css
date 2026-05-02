@@ -951,6 +951,22 @@ a:hover {
   overflow-y: auto;
   padding-right: 12px;
   border-right: 1px solid var(--border);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.wiki-sidebar-details::-webkit-scrollbar {
+  width: 6px;
+}
+.wiki-sidebar-details::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wiki-sidebar-details::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+.wiki-sidebar-details::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
 }
 
 /* Desktop: force sidebar visible regardless of <details> open state.
