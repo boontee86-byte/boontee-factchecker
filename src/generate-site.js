@@ -92,13 +92,7 @@ function generateIndex(videos, researchItems, wikiConfig) {
       <p>Have a video you'd like me to fact-check or a topic you'd like explored? <a href="https://t.me/boontee86" target="_blank">Reach out on Telegram</a>.</p>
     </div>
 
-    <div class="section-divider"></div>
-    <h2 class="section-header">Fact-Checks</h2>
-    <p class="section-description">Claims in YouTube finance and investing videos, verified against primary sources including SEC filings, Federal Reserve data, and established financial research.</p>
-    <div class="video-grid">
-${videoCards}
-    </div>
-    ${emptyState}
+    ${wikiConfig ? generateWikiHomeSection(wikiConfig) : ''}
 
     ${researchItems && researchItems.length > 0 ? `
     <div class="section-divider"></div>
@@ -122,7 +116,13 @@ ${videoCards}
       }).join('\n')}
     </div>` : ''}
 
-    ${wikiConfig ? generateWikiHomeSection(wikiConfig) : ''}
+    <div class="section-divider"></div>
+    <h2 class="section-header">Fact-Checks</h2>
+    <p class="section-description">Claims in YouTube finance and investing videos, verified against primary sources including SEC filings, Federal Reserve data, and established financial research.</p>
+    <div class="video-grid">
+${videoCards}
+    </div>
+    ${emptyState}
   </main>
 
 ${htmlFooter()}`;
